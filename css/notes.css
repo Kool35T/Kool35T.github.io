@@ -16,6 +16,7 @@ body{
   width: 100%;
   text-align: left;
 }
+
 #background{
   background: #eeccb4;
   height: 100%;
@@ -71,7 +72,7 @@ body{
 }
 /*end of side nav bar*/
 /*hoverable thing for responsive tag*/
-.navbutton{
+.navbutton2{
   background-color: #4CAF50;
   color: white;
   padding: 16px;

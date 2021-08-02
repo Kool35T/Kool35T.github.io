@@ -1,0 +1,317 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #eeccb4;
+  font-family: "Franklin Gothic Book", sans-serif;
+}
+@font-face {
+  font-family: 'Playlist Script';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Playlist Script'), url('Playlist Script.woff') format('woff');
+}
+.header {
+  margin: 0px;
+  text-align: center;
+  background-color: #e5edea;
+  background-size: cover;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+.tablink {
+  border-radius: 15px;
+  border: solid 1px black;
+  background: #f6fb98;
+  align-items:center;
+  letter-spacing: 2px;
+  padding: 10px;
+  margin-top: 30px;
+
+  transition: ease-out 0.3s;
+
+  bottom: 0;
+  margin-left: 50px;
+}
+.tablink a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+}
+.tablink:hover{
+  background-color: #f97b7b;
+  cursor: pointer;
+}
+/*styling the hoverable top nav*/
+#mySidenav a {
+  position: absolute;
+  top: 0px;
+  transition: 0.5s;
+  padding: 10px;
+  width: 170px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: 5px 5px ;
+  font-family: 'Playlist Script';
+  text-align: center;
+}
+/*when hover over*/
+#mySidenav a:hover {
+  top: 0px;
+  padding-top: 75px;
+  background-color: #ff99cc;
+}
+#about {
+  right: 600px;
+  padding-top: 75px;
+  background-color: #ff9914;
+}
+#resources {
+  right: 410px;
+  padding-top: 75px;
+  background-color: #ffff99;
+}
+#signup {
+  right: 220px;
+  padding-top: 75px;
+  background-color: #ccffcc;
+}
+#game {
+  right: 30px;
+  padding-top: 75px;
+  background-color: #33ccff;
+}
+.calendar-calendar{
+  padding: 30px;
+  margin: auto;
+}
+.navbutton2{
+  display: inline;
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdownbtn{
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  top: 20px;
+  right: 20px;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: rgba(181, 252, 210, 1);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a{
+  color: black;
+  padding: 10px 13px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdownbtn:hover .dropdown-content{
+  display: block;
+}
+.dropdownbtn:hover .navbutton{
+  background-color: #3e8e41;
+}
+/*responsive*/
+@media only screen and (max-width: 767px) {
+  /* For tablets or phone */
+  .dropdownbtn{
+    width: 8%;
+    visibility: visible;
+  }
+  #mySidenav{
+    display: none;
+  }
+}
+/*end of side nav bar*/
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-muted {
+  color: #777;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.disable-selection {
+  -webkit-user-select: none;
+  /* Chrome, Safari, and Opera */
+}
+.calendar, .calendar .add-event-day .add-event-day-field-btn, .calendar .calendar-days li:after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 100px;
+  bottom: 0;
+  margin: 75px auto;
+}
+.calendar {
+  background: white;
+  width: 840px;
+  height: 490px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.calendar .calendar-left-side-day-of-week, .calendar .current-day-events ul, .calendar .add-event-day, .calendar .calendar-change-year, .calendar .calendar-days li {
+  position: relative;
+}
+.calendar .calendar-left-side-day, .calendar .calendar-left-side-day-of-week, .calendar .current-day-events, .calendar .add-event-day-field-btn, .calendar .add-event-day-field {
+  color: white;
+}
+.calendar .calendar-left-side-day-of-week, .calendar .calendar-week {
+  text-transform: uppercase;
+}
+.calendar .right-side, .calendar .left-side {
+  padding: 30px;
+  height: 100%;
+}
+.calendar .left-side {
+  width: 320px;
+  background: #ec364f;
+  float: left;
+}
+.calendar .current-day, .calendar .current-day-events {
+  padding-top: 40px;
+}
+.calendar .current-day-events {
+  height: 215px;
+}
+.calendar .current-day-events ul {
+  padding-left: 30px;
+  list-style: none;
+}
+.calendar .current-day-events ul li::before {
+  content: '-';
+  position: absolute;
+  left: 3px; }
+.calendar h1.calendar-left-side-day {
+  font-size: 92px;
+}
+.calendar .add-event-day {
+  border-bottom: 1px solid white;
+}
+.calendar .add-event-day .add-event-day-field {
+  border: none;
+  background: transparent;
+  height: 34px;
+  width: 100%;
+  font-size: 16px;
+  padding-right: 30px;
+}
+.calendar .add-event-day .add-event-day-field:focus {
+  outline: none;
+}
+.calendar .add-event-day .add-event-day-field::placeholder {
+  color: #ccc;
+}
+.calendar .add-event-day .add-event-day-field-btn {
+  left: inherit;
+  line-height: 34px;
+}
+.calendar .right-side {
+  width: 520px;
+  float: right;
+}
+.calendar .calendar-change-year {
+  font-size: 20px;
+}
+.calendar .calendar-change-year .calendar-change-year-slider {
+  margin: 15px 0;
+  color: #737373;
+}
+.calendar .calendar-change-year .calendar-change-year-slider .fa:hover {
+  color: #404040;
+}
+.calendar .calendar-days, .calendar .calendar-week, .calendar .calendar-month {
+  list-style: none;
+  font-size: 0;
+}
+.calendar .calendar-days li, .calendar .calendar-week li, .calendar .calendar-month li {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+.calendar .calendar-month li {
+  width: calc(460px / 12);
+  height: 30px;
+  line-height: 30px;
+  color: #868686;
+  font-size: 13px;
+}
+.calendar .calendar-month li.active {
+  color: #171717;
+  font-weight: 600;
+}
+.calendar .calendar-days li {
+  width: calc(460px / 7);
+  height: 50px;
+  line-height: 50px;
+}
+.calendar .calendar-days li:after {
+  content: attr(data-day);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #959595;
+}
+.calendar .calendar-days li.another-month:after {
+  color: #ccc;
+}
+.calendar .calendar-days li:hover:after, .calendar .calendar-days li.selected-day:after, .calendar .calendar-days li.event-day:before, .calendar .calendar-days li.active-day:after {
+  border-radius: 50%;
+}
+.calendar .calendar-days li:hover:after, .calendar .calendar-days li.selected-day:after {
+  background: #ccc;
+  color: white;
+}
+.calendar .calendar-days li.event-day:before {
+  content: ' ';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: #1400c7;
+}
+.calendar .calendar-days li.active-day:after {
+  color: white;
+  background: #ec364f;
+}
+.calendar .calendar-week {
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #737373;
+  border-top: 1px solid #ccc;
+}
+.calendar .calendar-week li {
+  width: calc(460px / 7);
+  height: 30px;
+  line-height: 30px;
+}

@@ -215,12 +215,6 @@ hr{
 .dropdownbtn:hover .navbutton{
   background-color: #3e8e41;
 }
-#label{
-  font-weight: 600;
-  margin-top: 10px;
-}
-/*END*/
-
 /*responsive*/
 @media only screen and (max-width: 767px) {
   /* For tablets or phone */
@@ -232,6 +226,13 @@ hr{
     display: none;
   }
 }
+
+#label{
+  font-weight: 600;
+  margin-top: 10px;
+}
+/*END*/
+
 /*FOOTER*/
 .footer .container{
 	max-width: 1170px;
