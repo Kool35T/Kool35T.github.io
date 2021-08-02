@@ -363,11 +363,16 @@ hr{
    padding: 0 15px;
    margin-left: 25px;
 }
+.footer-col p {
+  text-align: left;
+}
 .footer-col h4{
-	font-size: 18px;
+	font-size: 30px;
+  font-family: 'Playlist script';
 	color: black;
+  letter-spacing: 3px;
 	text-transform: capitalize;
-	margin-bottom: 35px;
+	margin-bottom: 25px;
 	font-weight: 500;
 	position: relative;
 }
