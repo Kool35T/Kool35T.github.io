@@ -225,7 +225,8 @@ hr{
 /*GREETINGS*/
 /*welcome message*/
 #welcomemsg{
-  margin-left:200px;
+  margin-left: 200px;
+  margin-right: auto;
   text-align: left;
 }
 .welcomeuserh3{
