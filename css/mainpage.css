@@ -1,0 +1,652 @@
+body {
+  margin:0px;
+  text-align: center;
+  font-family: "Franklin Gothic Book", sans-serif;
+}
+@font-face {
+  font-family: 'Playlist Script';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Playlist Script'), url('Playlist Script.woff') format('woff');
+}
+#background{
+  background: #eeccb4;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+
+/*LOG IN*/
+#login div{
+  font-family: "Franklin Gothic Book", sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+}
+.login-popup{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1099;
+	background-color:rgba(0,0,0,0.9);
+	visibility: hidden;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.login-popup.show{
+	visibility:visible;
+	opacity: 1;
+}
+.login-popup .box{
+	background-color:#ffffff;
+	width: 750px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 0;
+	margin-left: 50px;
+	transition: all 1s ease;
+
+}
+.login-popup.show .box{
+	opacity: 1;
+	margin-left: 0;
+}
+.login-popup .box .img-area{
+	flex:0 0 50%;
+	max-width: 50%;
+	position: relative;
+	overflow: hidden;
+	padding:30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-popup .box .img-area .img{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../inputs/icons/Piki Poko.png');
+	background-size: cover;
+	background-position: center;
+	animation: zoomInOut 7s linear infinite;
+	z-index: -1;
+
+}
+@keyframes zoomInOut{
+	0%,100%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+}
+.login-popup .box .form{
+	flex:auto;
+	max-width: 50%;
+	padding:40px 30px;
+}
+.login-popup .box .form h1{
+	color:#000000;
+	font-size: 30px;
+	margin:0 0 30px;
+}
+.login-popup .box .form .form-control{
+	height: 45px;
+	margin-bottom: 30px;
+	width: 100%;
+	border:none;
+	border-bottom:1px solid #cccccc;
+	font-size: 15px;
+	color:#000000;
+}
+.login-popup .box .form .form-control:focus{
+	outline: none;
+}
+.login-popup .box .form label{
+	font-size: 15px;
+	color:#555555;
+}
+.login-popup .box .form .btn{
+	width: 100%;
+	background-color: #E91E63;
+	margin-top:40px;
+	height: 45px;
+	border:none;
+	border-radius: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
+	color:#ffffff;
+	cursor: pointer;
+}
+.login-popup .box .form .btn:focus{
+	outline: none;
+}
+/*responsive*/
+@media(max-width: 767px){
+	.login-popup .box{
+		width: calc(100% - 30px);
+	}
+	.login-popup .box .img-area{
+		display: none;
+	}
+	.login-popup .box .form{
+		flex: 0 0 100%;
+        max-width: 100%;
+	}
+}
+/*END*/
+
+/*style head*/
+.header {
+  margin: 0px;
+  background-color: #e5edea;
+  background-size: cover;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+/*style hr*/
+hr{
+  height:5px;
+  background-color: #f97b7b;
+  width: 80%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/*styling the hoverable top nav*/
+#mySidenav a {
+  position: absolute;
+  top: 0px;
+  transition: 0.5s;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: 5px 5px ;
+  font-family: 'Playlist Script';
+  text-align: center;
+}
+/*background color of active page*/
+#mySidenav a.active{
+  top: 0px;
+  padding-top: 85px;
+}
+/*when hover over*/
+#mySidenav a:hover {
+  top: 0px;
+  padding-top: 75px;
+  background-color: #ff99cc;
+}
+#about {
+  right: 600px;
+  padding-top: 75px;
+  background-color: #ffcc99;
+}
+#resources {
+  right: 410px;
+  padding-top: 75px;
+  background-color: #ffff99;
+}
+#signup {
+  right: 220px;
+  padding-top: 75px;
+  background-color: #ccffcc;
+}
+#game {
+  right: 30px;
+  padding-top: 75px;
+  background-color: #33ccff;
+}
+/*end of side nav bar*/
+
+/*BACKGROUND COLOR*/
+#background{
+  background: #eeccb4;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+/*END*/
+
+/*GREETINGS*/
+/*welcome message*/
+#welcomemsg{
+  margin-left:200px;
+  text-align: left;
+}
+.welcomeuserh3{
+  font-size: 50px;
+  padding: 0px;
+  margin: 100px 0px 0px 0px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.welcomeuserh1{
+  font-size: 80px;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 5px;
+  word-spacing: 15px;
+  padding: 0px;
+  margin-top: 0px;
+  font-family: sans-serif;
+
+  /*typing animation*/
+  animation: type 4s steps(13) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  width: 13ch;
+}
+@keyframes type{
+  0%{
+    width: 0ch;
+  }
+  50%,100% {
+    transform: translate(0, 0);
+    width: 13ch;
+  }
+}
+#intro{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  font-size: 25px;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+  font-family: "Franklin Gothic Book", sans-serif;
+}
+
+/*NAVIGATE WITHIN THE MAIN PAGE*/
+.navbutton{
+  text-align: left;
+  word-spacing: 50px;
+  display: inline-block;
+  margin-top: 75px;
+  margin-left:0px;
+  padding: 0px;
+}
+.tablink{
+  padding:0px;
+  margin: auto;
+
+  border: 1px solid #663300;
+  border-radius: 30px;
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 200px;
+
+  box-shadow: inset 0 0 0 0 #f97b7b;
+  transition: ease-out 0.3s;
+}
+.tablink a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-family: 'Playlist Script';
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+/*when hover over*/
+.tablink:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+
+  box-shadow: inset 200px 0 0 0 #f97b7b;
+  cursor: pointer;
+}
+/*content*/
+.content{
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-top: 95px;
+  width: 80%;
+  margin: auto;
+}
+
+/*carousel*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin-left: 250px;
+  padding: 0px;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* Position the "prev button" to the left */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.IMAGEtext{
+  margin: 0;
+  padding: 5px;
+  bottom: 5px;
+  left: 15%;
+  height: 25px;
+  width: 70%;
+  border-radius: 20px;
+  background-color:rgba(184, 184, 184, 0.7);
+  font-size: 25px;
+  font-weight: 400;
+  position: absolute;
+  color: #black;
+  font-weight: 600;
+}
+.carousel-overlay{
+  position: absolute;
+  top:0;
+  bottom:0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s ease;
+  background-color:rgba(243, 160, 160, 0.9);
+}
+.carousel-header{
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  font-weight: 700;
+}
+.carousel-text {
+  color: black;
+  font-size: 25px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 200;
+}
+.carouselPic:hover{
+  opacity: 0;
+}
+.carousel-overlay:hover{
+  opacity: 1;
+}
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  background-color: gray;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: atuo;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@keyframes fade {
+
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*END*/
+/*FEATURES*/
+
+#ffeatures{
+  text-align: left;
+  font-family: "Playlist Script";
+  font-size: 50px;
+  letter-spacing: 5px;
+  padding: 0 50px;
+}
+#fffeatures{
+  text-align: left;
+  padding: 0 50px;
+}
+/*REFERENCE CARD FLIPPER*/
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  display: inline-block;
+  margin-left: 40px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background: rgba(252, 233, 220,0.4);
+  color: black;
+}
+.flip-card-back {
+  background: rgba(252, 233, 220,0.4);
+  color: black;
+  margin: auto;
+  transform: rotateY(180deg);
+}
+.flip-card-back h1{
+  margin-top: 80px;
+  font-family: 'Playlist Script';
+  font-size: 30px;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+}
+.flip-card-back p{
+  padding: 10px;
+  font-size: 15px;
+}
+/*about us*/
+#aboutus{
+  width: 75%;
+}
+#aboutus h3{
+  margin-top: 80px;
+  font-family: 'Playlist Script';
+  font-size: 50px;
+  text-transform: capitalize;
+  text-align: left;
+  letter-spacing: 6px;
+}
+#aboutus p{
+  font-size: 20px;
+  text-align: left;
+  font-weight: normal;
+}
+.table{
+  border-collapse: collapse;
+}
+.table td{
+  padding: 20px 10px;
+  width: 150px;
+}
+.table th{
+  padding: 5px 10px;
+  font-size: 30px;
+  font-family: "Playlist Script";
+}
+
+/*END*/
+
+/*FOOTER*/
+.footer .container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer ul{
+	list-style: none;
+}
+.footer{
+	background-color: #eeccb4;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 20%;
+   padding: 0 15px;
+   margin-left: 25px;
+}
+.footer-col p {
+  text-align: left;
+}
+.footer-col h4{
+	font-size: 30px;
+  font-family: 'Playlist script';
+	color: black;
+  letter-spacing: 3px;
+	text-transform: capitalize;
+	margin-bottom: 25px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	color: black;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: black;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

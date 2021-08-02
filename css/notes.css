@@ -1,0 +1,299 @@
+body{
+  font-family: "Franklin Gothic Book", sans-serif;
+  align-items: center;
+}
+@font-face {
+  font-family: 'Playlist Script';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Playlist Script'), url('Playlist Script.woff') format('woff');
+}
+.header {
+  margin: 0px;
+  background-color: #e5edea;
+  background-size: cover;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+#background{
+  background: #eeccb4;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+/*styling the hoverable top nav*/
+#mySidenav a {
+  position: absolute;
+  top: 0px;
+  transition: 0.5s;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-radius: 5px 5px ;
+  font-family: 'Playlist Script';
+  text-align: center;
+}
+/*background color of active page*/
+#mySidenav a.active{
+  top: 0px;
+  padding-top: 85px;
+}
+/*when hover over*/
+#mySidenav a:hover {
+  top: 0px;
+  padding-top: 75px;
+  background-color: #ff99cc;
+}
+#about {
+  right: 600px;
+  padding-top: 75px;
+  background-color: #ffcc99;
+}
+#resources {
+  right: 410px;
+  padding-top: 75px;
+  background-color: #ffff99;
+}
+#signup {
+  right: 220px;
+  padding-top: 75px;
+  background-color: #ccffcc;
+}
+#game {
+  right: 30px;
+  padding-top: 75px;
+  background-color: #33ccff;
+}
+/*end of side nav bar*/
+/*hoverable thing for responsive tag*/
+.navbutton{
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdownbtn{
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  top: 20px;
+  right: 20px;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: rgba(181, 252, 210, 1);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a{
+  color: black;
+  padding: 10px 13px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdownbtn:hover .dropdown-content{
+  display: block;
+}
+.dropdownbtn:hover .navbutton{
+  background-color: #3e8e41;
+}
+/*responsive*/
+@media only screen and (max-width: 767px) {
+  /* For tablets or phone */
+  .dropdownbtn{
+    width: 8%;
+    visibility: visible;
+  }
+  #mySidenav{
+    display: none;
+  }
+}
+/*END*/
+.accordion {
+  width: 80%;
+  margin: auto;
+}
+.accordion-button{
+  border-bottom: solid 2px red;
+}
+.accordion-body{
+  padding: 30px;
+  max-height: 550px;
+  overflow-y: scroll;
+  background-image: linear-gradient(rgba(241, 177, 177, 1), rgba(235, 241, 177, 1));
+}
+.accordion-body img{
+  height: 375px;
+  width: 625px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: solid 1px black;
+  background-color: #e3791c;
+}
+.accordion-body strong{
+  font-family: 'Playlist Script';
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-decoration: underline;
+}
+.accordion iframe{
+  height: 375px;
+  width: 625px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: solid 1px black;
+  background-color: #e3791c;
+}
+.prischCONTENT{
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+.prischCONTENT h1{
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 7px;
+  font-family: 'Playlist Script';
+  text-decoration: underline;
+  padding: 20px;
+}
+.secschCONTENT{
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+.secschCONTENT h1{
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+  padding: 20px;
+}
+.jcCONTENT{
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+.jcCONTENT h1{
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+  padding: 20px;
+}
+.polyCONTENT{
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+.polyCONTENT h1{
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+  padding: 20px;
+}
+#p{
+  text-align: center;
+}
+
+/*FOOTER*/
+.footer .container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer .row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.footer ul{
+	list-style: none;
+}
+.footer{
+	background-color: #eeccb4;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 20%;
+   padding: 0 15px;
+   margin-left: 25px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: black;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: black;
+	text-decoration: none;
+	font-weight: 300;
+	color: black;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: black;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

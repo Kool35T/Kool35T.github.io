@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>PikiPoko - Calendar </title>
+  <!--ICONS PAGE-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/calendar.css"/>
+</head>
+
+<body>
+<section id ="background">
+  <div class="header" id="top">
+    <a href="#top">
+    <img src="inputs/images/pikipoko.jpg" alt="PikiPoko" height="100px" width="300px"/></a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="mainpage.html" id="about">ABOUT US</a>
+    <a  href="resources2.html" id="resources">RESOURCES</a>
+    <a href="signup.html" id="signup">FEEDBACK</a>
+    <a class="active" href="calendar.html" id="game">CALENDAR</a>
+    <!--<a href="game.html" id="game">GAMES </a>-->
+  </div>
+
+  <div class="greetings" >
+    <h3> Unclear of what to do today? </h3>
+    <h1> CALENDAR <br> FOR YOU </h1>
+  </div>
+
+  <div class="navbutton">
+    <!--Onclick full page after the hr -->
+    <button class="tablink"><a href="calendar2.html">Calendar</a></button>
+    <button class="tablink" onclick="openPage('daily', this, '#f97b7b')" id="defaultOpen"><a href="#daily">Planner</a></button>
+    <button class="tablink" onclick="openPage('to-do', this, '#f97b7b')"><a href="#to-do">To-do</a></button>
+  </div>
+
+<hr>
+
+<div id="daily" class="content">
+  <h3> Daily Planner</h3>
+  <button class="popdown"> Reasons why You need a planner</button>
+  <div class="panel">
+    <ul>
+      <li>have a direction of what tou are doing for today!</li>
+      <li>Set goals to make youself more productive!</li>
+    </ul>
+  </div>
+  <button class="popdown"> Types of Planner</button>
+  <div class="panel">
+    <p> All you need to do is to simply key in the events and you can have.</p>
+    <p> Types of planner</p>
+    <ol>
+      <li class="highlightedtext">Daily</li>
+      <li class="highlightedtext">Weekly</li>
+      <li>Monthly</li>
+      <li> Yearly</li>
+      <ul>
+        <li> This option is more suitable for those who want to take note of their friends' birthday, events, public holiday and other importatn dates.</li>
+      </ul>
+    </ol>
+  </div>
+  <button class="popdown">Examples</button>
+  <div class="panel">
+    <p> Take a look at te different types of planner done by studygrammers!<br>
+    You can find more of such examples in Pinterest when you search "Monthly planner" or "Bullet Journal"</p>
+    <img src="inputs/images/dailyplanner.jpg" alt="Daily Planner" id="plannerpic" height="300" width="300">
+    <img src="inputs/images/weeklyplanner.jpg" alt="Weekly planner" id="plannerpic" height="300" width="300">
+    <br>
+    <img src="inputs/images/monthlyplanner.jpg" alt="Monthly planner" id="plannerpic" height="300" width="300">
+    <img src="inputs/images/yearly.jpg" alt="Yearly planner" id="plannerpic" height="300" width="300">
+  </div>
+</div>
+<div id="to-do" class="content">
+  <h3>Do remember to create your To-Do list!</h3>
+  <p>Ensure that you are able to finish them within the time-frame you've set for yourself<br>
+  Do not over-plan! Have some time to talk to your friends and take a break</p>
+  <div class="todolist">
+    <div class="container">
+      <div id="newtask">
+        <input type="text" placeholder="Enter Task">
+        <button id="push">Add</button>
+      </div>
+      <div id="tasks"></div>
+      </div>
+    <script>
+      document.querySelector('#push').onclick = function() {
+        if(document.querySelector('#newtask input').value.length == 0){
+          alert("Please Enter a Task");
+        }
+        else{
+          document.querySelector('#tasks').innerHTML += `<div class="task">
+          <span id="taskname">
+          ${document.querySelector('#newtask input').value}
+          </span>
+          <button class="delete">X</button>
+          </div>
+          `;
+          var current_tasks = document.querySelectorAll('.delete');
+          for (var i = 0; i < current_tasks.length; i++) {
+            current_tasks[i].onclick = function (){
+              this.parentNode.remove();
+            }
+          }
+          var tasks = document.querySelectorAll('#taskname');
+          for (var i = 0; i < tasks.length; i++) {
+            tasks[i].onclick = function (){
+              this.classList.toggle('completed');
+            }
+          }
+          document.querySelector('#newtask input').value = "";
+        }
+      }
+    </script>
+  </div>
+</div>
+
+<!--Script for choosing the respective planners-->
+<script>
+  var acc = document.getElementsByClassName("popdown");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  function openPage(pageName,elmnt,color) {
+    var i, content, tablinks;
+    content = document.getElementsByClassName("content");
+    for (i = 0; i < content.length; i++) {
+      content[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+     for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].style.backgroundColor = "";
+     }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+<hr>
+
+<footer class="footer">
+   <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>pikiPoko</h4>
+        <ul>
+          <li><a href="recoures2.html">Resources</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="signup.html">Feedback form</a></li>
+          <!--<li><a href="game.html">Games</a></li>-->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About us</h4>
+        <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
+          We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
+        This website does not is advertisement free in order to not promote young people to buy things from online often.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Features</h4>
+        <ul>
+          <li><a href="calendar">Calendar</a></li>
+          <li><a href="notes.html">Notes reference</a></li>
+          <li><a href="notes.html">Exam papers</a></li>
+          <li><a href="resources2.html">Learning websites</a></li>
+          <!--<li><a href="game.html">Games</a></li>-->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <div class="social-links">
+            <a href="mailto:212033J@mymail.nyp.edu.sg"><i class="fas fa-envelope-open-text"></i></a>
+            <a href="https://www.instagram.com/yonglinnnnnn/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/yonglin-xu-bb4588212/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+</footer>
+
+</section>
+
+</body>
+</html>

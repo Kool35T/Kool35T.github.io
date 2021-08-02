@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset = "utf-8">
+  <title> Main Page </title>
+  <!--ICONS PAGE-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/mainpage.css"/>
+</head>
+
+<body>
+  <div class="login-popup">
+     <div class="box">
+       <div class="img-area">
+        <div class="img">
+        </div>
+       </div>
+       <div class="form">
+        <h1>Log In</h1>
+        <form>
+          <div class="form-group">
+            <input type="text" placeholder="Name" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control" id="password">
+          </div>
+          <div class="form-group">
+            <label><input type="checkbox">
+              Remember Me
+            </label>
+          </div>
+          <button type="button" class="btn" onclick="welcome()">Log In</button>
+        </form>
+       </div>
+     </div>
+     <script type="text/javascript">
+     // log in page
+     const loginPopup = document.querySelector('.login-popup');
+     const login = document.querySelector('.btn');
+
+     window.addEventListener("load",function(){
+       showPopup();
+     })
+     function showPopup(){
+       const timeLimit = 1 //seconds;
+       let i=0;
+       const timer = setInterval(function(){
+         i++;
+         if(i == timeLimit){
+           clearInterval(timer);
+           loginPopup.classList.add("show");
+         }
+         console.log(i);
+       },200);
+     }
+
+     function welcome(){
+       var username = document.getElementById("username").value;
+       var password = document.getElementById("password").value;
+       document.getElementById("userNAME").innerHTML = username;
+       loginPopup.classList.remove("show");
+     }
+
+     </script>
+  </div>
+
+<section id="background">
+  <div class="header">
+    <a href="#top">
+    <img src="inputs/images/pikipoko.jpg" alt="PikiPoko" height="100px" width="300px"/></a>
+  </div>
+
+  <div id="mySidenav">
+    <a class="active" href="#" id="about">ABOUT US</a>
+    <a href="resources2.html" id="resources">RESOURCES</a>
+    <a href="signup.html" id="signup">FEEDBACK</a>
+    <a href="calendar.html" id="game">CALENDAR</a>
+    <!--<a href="game.html" id="game">GAMES </a>-->
+  </div>
+
+  <div id="welcomemsg" class="top">
+    <h3 class="welcomeuserh3">Welcome <span id="userNAME"></span></h3>
+    <h1 class="welcomeuserh1"> to PikiPoko~  </h1>
+    <p id="intro">What are you looking for today? More lecture notes? Stationaries? Or even people to talk to? <br> Fred not, there’s always someone serving this website to chat with you. Enjoy your stay here! </p>
+  </div>
+
+  <div class="navbutton">
+    <!--Onclick full page after the hr -->
+    <button class="tablink" onclick="openPage('carousel', this, '#f97b7b')" id="defaultOpen"><a href="#carousel">Next</a></button>
+    <button class="tablink" onclick="openPage('features', this, '#f97b7b')"><a href="#features">Features</a></button>
+    <button class="tablink" onclick="openPage('aboutus', this, '#f97b7b')"><a href="#aboutus">About us</a></button>
+  </div>
+
+<hr>
+<br>
+<!--END OF THE COVER PAGE -->
+
+<!--carousel-->
+    <div id="carousel" class="content">
+
+      <div class="slideshow-container">
+        <!--RESOURCES-->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 4</div>
+          <img src="inputs/images/grasswithflower.jpg" style="width:100%; height:100%;"  id="carouselPic">
+          <div class="IMAGEtext">Resources</div>
+          <a href="resources2.html">
+            <div class="carousel-overlay">
+              <div class="carousel-header">
+                <h1>PIKIPOKO RESOURCES</h1>
+              </div>
+              <div class="carousel-text">
+                <p>You can have the access to calendars, plan your day, as well as making to do list!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--CALENDAR-->
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 4</div>
+          <img src="inputs/images/grass2.jpg" style="width:100%; height:100%;"  id="carouselPic">
+          <div class="IMAGEtext">Calendar</div>
+          <a href="calendar.html">
+            <div class="carousel-overlay">
+              <div class="carousel-header">
+                <h1>TIME MANAGEMENT</h1>
+              </div>
+              <div class="carousel-text">
+                You can have the access to calendars, plan your day, as well as making to do list!
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--Games-->
+        <!--
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="inputs/images/grass.jpg" style="width:100%; height:100%;"  id="carouselPic">
+          <div class="IMAGEtext">Games</div>
+          <a href="game.html"></a>
+            <div class="carousel-overlay">
+              <div class="carousel-header">
+                <h1>TAKE SOME BREAK..!</h1>
+              </div>
+              <div class="carousel-text">
+                <p>Hey! Take a break from studying man... have balance between studies and personal time.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      -->
+        <!--Membership benefits-->
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="inputs/images/grass4.jpg" style="width:100%; height:100%;" id="carouselPic">
+          <div class="IMAGEtext">RESOURCES</div>
+          <a href="#aboutus">
+            <div class="carousel-overlay">
+              <div class="carousel-header">
+                <h1>NOTES</h1>
+              </div>
+              <div class="carousel-text">
+                <p>Check out the amount of resources that PikiPoko has!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <!--
+        <span class="dot" onclick="currentSlide(4)"></span>
+      -->
+      </div>
+
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+      </script>
+    </div>
+    <div id="features" class="content">
+      <h1 id="ffeatures">What is PikiPoko about?</h1>
+      <p id="fffeatures">
+        PikiPoko is an educational website where students accross all ages can find their learning resources at and is able to learn happily.
+        <br>
+        This website hopes to enforce students to share their learning materials as well as make full use of the resources that they can find online. By dabbling into technology, students can make share resources for other PikiPoko learners to use.
+      </p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <a href="resources.html">
+              <img src="inputs/icons/RESOURCEmain.gif" alt="resources gif" height="300px" width="300px">
+            </a>
+          </div>
+          <a href="resources2.html">
+            <div class="flip-card-back">
+              <h1>resources</h1>
+              <p>Take a look at the resources here.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="inputs/icons/PYDmain.gif" alt="plan your day gif" height="300px" width="300px">
+          </div>
+          <a href="calendar.html">
+            <div class="flip-card-back">
+              <h1>Calendar</h1>
+              <p>get your personalised calendar here!</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!--<div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <a href="game.html">
+              <img src="inputs/icons/GAMEmain.gif" alt="game gif" height="300px" width="300px">
+            </a>
+          </div>
+          <div class="flip-card-back">
+            <h1>Calendar</h1>
+            <p>get your personalised calendar here!</p>
+          </div>
+        </div>
+      </div>-->
+    </div>
+    <div id="aboutus" class="content">
+      <h3> What does PikiPoko stand for? </h3>
+      <table border="1" class="table">
+        <tr><th>P</th>
+            <th>i</th>
+            <th>k</th>
+            <th>i</th>
+            <th>P</th>
+            <th>o</th>
+            <th>k</th>
+            <th>o</th>
+        </tr>
+        <tr><td>Positivity in studying</td>
+            <td>Initiate(d) learning</td>
+            <td>Knowledgeable in all aspects</td>
+            <td>Intellectual learners</td>
+            <td>Productive in learning</td>
+            <td>Open-minded learners</td>
+            <td>Kindhearted to share resources with others</td>
+            <td>Over-flowing of joy!</td>
+      </table>
+      <h3> What PikiPoko hopes for their learners </h3>
+      <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
+      <br>
+      We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
+      <br>
+      This website does not is advertisement free in order to not promote young people to buy things from online often.</p>
+    </div>
+    <script>
+      function openPage(pageName,elmnt,color) {
+      var i, content, tablinks;
+      content = document.getElementsByClassName("content");
+      for (i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+       for (i = 0; i < tablinks.length; i++) {
+         tablinks[i].style.backgroundColor = "";
+       }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
+  <hr>
+
+  <footer class="footer">
+     <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>pikiPoko</h4>
+          <ul>
+            <li><a href="recoures2.html">Resources</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="signup.html">Feedback form</a></li>
+            <!--<li><a href="game.html">Games</a></li>-->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About us</h4>
+          <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
+            <br><br>We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
+          <br><br>This website does not is advertisement free in order to not promote young people to buy things from online often.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="calendar">Calendar</a></li>
+            <li><a href="notes.html">Notes reference</a></li>
+            <li><a href="notes.html">Exam papers</a></li>
+            <li><a href="resources2.html">Learning websites</a></li>
+            <!--<li><a href="game.html">Games</a></li>-->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <div class="social-links">
+              <a href="mailto:212033J@mymail.nyp.edu.sg"><i class="fas fa-envelope-open-text"></i></a>
+              <a href="https://www.instagram.com/yonglinnnnnn/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/yonglin-xu-bb4588212/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+  </footer>
+
+  </section>
+
+</body>
+</html>
