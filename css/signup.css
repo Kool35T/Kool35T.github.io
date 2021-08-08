@@ -2,7 +2,6 @@ body {
   margin:0px;
   text-align: left;
   font-family: "Franklin Gothic Book", sans-serif;
-  background: #eeccb4;
   height: 100%;
   width: 100%;
   left:0;
@@ -13,14 +12,64 @@ body {
   font-weight: normal;
   src: local('Playlist Script'), url('Playlist Script.woff') format('woff');
 }
+#background{
+  background-image: url('../inputs/images/booksbg.jfif');
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+.bodycontent{
+  padding: 0px;
+  margin: 0px auto;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(229, 237, 234, 0.95);
+}
+#clock span{
+  margin: 0;
+  display: inline-block;
+  left:0;
+  float: left;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f97b7b;
+  box-shadow: 0 5px 15px #f97b7b;
+  color: black;
+  margin-left: 20px;
+}
+#clock span:first-child{
+  margin-left: 10px;
+}
+#clock span:last-child{
+  background-color: #FF5454;
+}
+/*FOR TEMPERATURE*/
+.temperature-value{
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #FF5454;
+  box-shadow: 0 5px 15px #FF5454;
+  color: black;
+  margin-left: 20px;
+}
+
 /*style head*/
 .header {
-  margin: 0px;
-  text-align: center;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #e5edea;
   background-size: cover;
   color: black;
-  width: 100%;
+  width: 80%;
+  height: 100%;
   text-align: left;
 }
 /*style hr*/
@@ -33,6 +82,7 @@ hr{
 #spacing{
   height: 30px;
   margin: 20px;
+  margin-top: 0;
 }
 
 /*styling the hoverable top nav*/
@@ -41,7 +91,7 @@ hr{
   top: 0px;
   transition: 0.5s;
   padding: 10px;
-  width: 170px;
+  width: 175px;
   text-decoration: none;
   font-size: 20px;
   color: black;
@@ -59,29 +109,76 @@ hr{
 /*when hover over*/
 #mySidenav a:hover {
   top: 0px;
-  padding-top: 75px;
-  background-color: #ff99cc;
+  padding-top: 100px;
+  opacity: 0.85;
 }
 #about {
-  right: 600px;
+  right: 745px;
   padding-top: 75px;
-  background-color: #ffcc99;
+  background: #f97b7b;
 }
 #resources {
-  right: 410px;
+  right: 555px;
   padding-top: 75px;
-  background-color: #ffff99;
+  background: #f97b7b;
 }
 #signup {
-  right: 220px;
+  right: 365px;
   padding-top: 75px;
-  background-color: #ccffcc;
+  background: #f97b7b;
 }
 #game {
-  right: 30px;
+  right: 175px;
   padding-top: 75px;
-  background-color: #33ccff;
+  background: #f97b7b;
 }
+.navbutton2{
+  background: #f97b7b;
+  color: black;
+  min-width: 175px;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdownbtn{
+  position: relative;
+  display: inline-block;
+  visibility: hidden;
+  top: -10px;
+  right: 20px;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background: #f97b7b;
+  opacity: 0.8;
+  min-width: 175px;
+}
+.dropdown-content a{
+  color: black;
+  padding: 10px 13px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdownbtn:hover .dropdown-content{
+  display: block;
+}
+/*responsive*/
+@media only screen and (max-width: 767px) {
+  /* For tablets or phone */
+  .dropdownbtn{
+    width: 8%;
+    visibility: visible;
+  }
+  #mySidenav{
+    display: none;
+  }
+}
+
 /*end of side nav bar*/
 
 /*form*/
@@ -90,7 +187,6 @@ hr{
   max-width: 70%;
   min-width: 400px;
   margin: auto;
-  padding: 20px;
   background-image: linear-gradient(rgba(241, 177, 177, 1), rgba(235, 241, 177, 1));
   border: solid 1px black;
 }
@@ -138,7 +234,6 @@ hr{
 .modal-content #news{
   font-family: 'Playlist Script';
   font-size: 60px;
-  text-decoration: underline;
   letter-spacing: 5px;
   margin-top: 25px;
   margin: 0px;
@@ -153,7 +248,6 @@ hr{
   letter-spacing: 5px;
   margin-top: 25px;
   margin: 0px;
-  text-decoration: underline;
 }
 .modal-content p {
   margin-top: 15px;
@@ -232,8 +326,11 @@ hr{
   margin-top: 10px;
 }
 /*END*/
-
 /*FOOTER*/
+footer{
+  width: 80%;
+  margin: auto;
+}
 .footer .container{
 	max-width: 1170px;
 	margin:auto;
@@ -246,7 +343,6 @@ hr{
 	list-style: none;
 }
 .footer{
-	background-color: #eeccb4;
     padding: 70px 0;
 }
 .footer-col{
@@ -291,7 +387,7 @@ hr{
 	transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-	color: #ffffff;
+	color: #531cd4;
 	padding-left: 8px;
 }
 .footer-col .social-links a{
@@ -316,10 +412,5 @@ hr{
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
 }
 }

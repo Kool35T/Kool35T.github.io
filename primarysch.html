@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <!--ICONS PAGE-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>PikiPoko - Notes/Primary</title>
+  <link rel="stylesheet" href="css/notes.css">
+  <style media="screen">
+  </style>
+</head>
+<body>
+  <section id="background">
+    <div class="header">
+      <a href="index.html">
+      <img src="inputs/images/pikipoko.jpg" alt="PikiPoko" height="100px" width="300px"/></a>
+      <!--on tablet/phone-->
+      <div class="dropdownbtn">
+        <button type="button" class="navbutton2">Feedback</button>
+        <div class="dropdown-content">
+          <a href="index.html">About Us</a>
+          <a  href="resources2.html">Resources</a>
+          <!--<a href="game.html">Games</a>-->
+          <a href="calendar.html">Calendar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodycontent">
+      <div class="clock">
+        <span id="clock"></span>
+        <span class="temperature-value">- °C</span>
+      </div>
+      <!--script for clock-->
+      <script type="text/javascript">
+        //clock
+        function clock(){
+          // get the time
+          var date = new Date();
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var seconds = date.getSeconds();
+          var midday;
+
+          hours = updateTime(hours);
+          minutes = updateTime(minutes);
+          seconds = updateTime(seconds);
+
+          //if else condition
+          midday = (hours >= 12) ? "PM" : "AM";
+
+          document.getElementById("clock").innerHTML = "<span>" + hours +"</span>" +"<span>"+ minutes +"</span>" +"<span>"+ seconds +"</span>"+"<span>"+midday+"</span>";
+
+          var time = setTimeout(function(){
+            clock();
+          }, 1000);
+        }
+        //sees if the time/sec is a single digit
+        function updateTime(k){
+          if (k <10){
+            return "0" + k;
+          }
+          else{
+            return k;
+          }
+        }
+
+        clock()
+        // weather
+        const tempElement = document.querySelector(".temperature-value");
+        const notificationElement = document.querySelector(".notification");
+        const weather = {};
+
+        weather.temperature = {
+            unit : "celsius"
+        }
+        // APP CONSTS AND VARS
+        const KELVIN = 273;
+        // API KEY
+        const key = "82005d27a116c2880c8f0fcb866998a0";
+
+        // CHECK IF BROWSER SUPPORTS GEOLOCATION
+        if('geolocation' in navigator){
+            navigator.geolocation.getCurrentPosition(setPosition, showError);
+        }else{
+            notificationElement.style.display = "block";
+            notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
+        }
+        // SET USER'S POSITION
+        function setPosition(position){
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+
+            getWeather(latitude, longitude);
+        }
+
+        // SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
+        function showError(error){
+            notificationElement.style.display = "block";
+            notificationElement.innerHTML = `<p> ${error.message} </p>`;
+        }
+
+        //get weather from api provider
+        function getWeather(latitude, longitude){
+            let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+
+            fetch(api)
+                .then(function(response){
+                    let data = response.json();
+                    return data;
+                })
+                .then(function(data){
+                  weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+                  weather.iconId = data.weather[0].icon;
+                })
+                .then(function(){
+                    displayWeather();
+                });
+        }
+
+        //display weather to user
+        function displayWeather(){
+            tempElement.innerHTML = `${weather.temperature.value}°C`;
+
+        }
+      </script>
+
+      <div id="mySidenav">
+        <a href="index.html" id="about">ABOUT US</a>
+        <a class="active" href="resources2.html" id="resources">RESOURCES </a>
+        <a href="signup.html" id="signup">FEEDBACK</a>
+        <a href="calendar.html" id="game">CALENDAR</a>
+        <!--<a href="game.html" id="game">GAMES </a>-->
+      </div>
+
+      <div class="content">
+        <h1>Primary School</h1>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!--ENGLISH-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Primary School - English
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>
+                  <strong>English language</strong>
+                  <br>
+                  <img src="https://thumbs.dreamstime.com/b/vintage-handwriting-1872334.jpg" alt="calligraphy">
+                  <br>
+                  <a href="inputs/prischENGLISH.pdf">Click here</a> to get access to papers
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--MATH-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Primaryary School - Mathematics
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>
+                  <strong>Mathematics</strong>
+                  <br>
+                  <img src="https://previews.123rf.com/images/goldenshrimp/goldenshrimp1902/goldenshrimp190200589/116231450-math-and-geometry-seamless-pattern-with-handwriting-and-drawing-of-various-graph-solutions-geometry-.jpg" alt="math">
+                  <br>
+                  <a href="inputs/prischMATH.pdf">Click here</a> to get access to papers
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--SCIENCE-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Primary School - Science
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>
+                  <strong>Science</strong>
+                  <br>
+                  <img src="https://www.arcticfocus.org/media/images/scientific-chalkboard-childr.2e16d0ba.fill-1370x700-c100.jpg" alt="science">
+                  <br>
+                  <a href="inputs/prischSCIENCE.pdf">Click here</a> to get access to papers
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--MOTHER TONGUE-->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                Primary School - Mother Tongue
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>
+                  <strong>Mother Tongue - Chinese</strong>
+                  <br>
+                  <img src="https://thumbs.dreamstime.com/b/chinese-handwriting-art-17651705.jpg" alt="chinese handwriting">
+                  <br>
+                  <a href="inputs/prischCHINESE.pdf">Click here</a> to get access to papers
+                  <br><br>
+                  <strong>Mother Tongue - Malay</strong>
+                  <br>
+                  CURRENTLY UNAVAILABLE :<
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <footer class="footer">
+         <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>pikiPoko</h4>
+              <ul>
+                <li><a href="recoures2.html">Resources</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="signup.html">Feedback form</a></li>
+                <li><a href="primarysch.html">Primary School - Notes</a></li>
+                <li><a href="secondarysch.html">Secondary School - Notes</a></li>
+                <li><a href="poly.html">Polytechnic - Notes</a></li>
+
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>About us</h4>
+              <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
+                <br><br>We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
+              <br><br>This website is advertisement free in order to not promote young people to buy things from online often.</p>
+            </div>
+            <div class="footer-col">
+              <h4>Features</h4>
+              <ul>
+                <li><a href="calendar">Calendar</a></li>
+                <li><a href="resources2.html">Notes reference list</a></li>
+                <li><a href="primarysch.html">Primary School - Exam papers</a></li>
+                <li><a href="secondarysch.html">Secondary School - Exam papers</a></li>
+                <li><a href="resources2.html">Learning websites</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <div class="social-links">
+                  <a href="mailto:212033J@mymail.nyp.edu.sg"><i class="fas fa-envelope-open-text"></i></a>
+                  <a href="https://www.instagram.com/yonglinnnnnn/"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/yonglin-xu-bb4588212/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+      </footer>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

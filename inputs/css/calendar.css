@@ -1,0 +1,310 @@
+body {
+  margin:0px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+/*style head*/
+.header {
+  margin: 0px;
+  text-align: center;
+  background-color: #e5edea;
+  background-size: cover;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+#background{
+  background: #eeccb4;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+
+hr{
+  height:5px;
+  background-color: #f97b7b;
+  width: 80%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/*styling the hoverable top nav*/
+#mySidenav a {
+  position: absolute;
+  top: 0px;
+  transition: 0.5s;
+  padding: 10px;
+  width: 130px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 5px 5px ;
+}
+/*background color of active page*/
+#mySidenav a.active{
+  top: 0px;
+  padding-top: 85px;
+}
+/*when hover over*/
+#mySidenav a:hover {
+  top: 0px;
+  padding-top: 75px;
+  background-color: #ff99cc;
+}
+#about {
+  right: 600px;
+  padding-top: 75px;
+  background-color: #ff9914;
+}
+#resources {
+  right: 410px;
+  padding-top: 75px;
+  background-color: #ffff99;
+}
+#signup {
+  right: 220px;
+  padding-top: 75px;
+  background-color: #ccffcc;
+}
+#game {
+  right: 30px;
+  padding-top: 75px;
+  background-color: #33ccff;
+}
+/*end of side nav bar*/
+/*end of side nav bar*/
+
+/*GREETINGS*/
+.greetings{
+  padding: 0px;
+  margin: 100px 0px 0px 200px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+.greetings h3{
+  margin-top: 50px;
+  font-size: 30px;
+  margin: 0px;
+}
+.greetings h1{
+  font-size: 80px;
+  letter-spacing: 10px;
+  margin: 0;
+
+  /*typing animation*/
+  animation: type 4s steps(12) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  width: 12ch;
+}
+@keyframes type{
+  50%,100% {
+    transform: translate(0, 0);
+    width: 12ch;
+  }
+  0%{
+    width: 0ch;
+  }
+}
+
+/*to go to the different calendar categories*/
+.navbutton{
+  text-align: left;
+  word-spacing: 50px;
+  display: inline-block;
+  margin-top: 75px;
+  margin-left:0px;
+  padding: 0px;
+}
+.tablink{
+  padding:0px;
+  margin: auto;
+
+  border: 1px solid #663300;
+  border-radius: 30px;
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 200px;
+
+  box-shadow: inset 0 0 0 0 #f97b7b;
+  transition: ease-out 0.3s;
+}
+.tablink a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/*when hover over*/
+.tablink:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+
+  box-shadow: inset 200px 0 0 0 #f97b7b;
+  cursor: pointer;
+}
+/*content*/
+.content{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 200px;
+  margin-top: 95px;
+}
+
+/*popdown*/
+.popdown{
+  background-color: #FFFFCC;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.active, .popdown:hover {
+  background-color: #FFFF66;
+  border-right: solid 2px black;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  width: 77.3%;
+}
+
+/*to-do list*/
+#todolist{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #1d2630;
+  height: 35%;
+  width: 70%;
+  position: absolute;
+  margin: auto;
+  top: 50px;
+  left: 0;
+  right: 0;
+  padding: 30px 0;
+  border-radius: 8px;
+}
+/* Include the padding and border in an element's total width and height */
+#newtask{
+  width: 83%;
+  position: relative;
+  padding: 15px 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+#newtask input{
+  border-radius: 5px;
+  width: 90%;
+  height: 30px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  position: relative;
+
+}
+#newtask input:focus{
+  outline: none;
+  border-color: #19A68C;
+}
+#newtask button{
+  position: relative;
+  float: right;
+  width: 70px;
+  height: 45px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  background: #19A68C;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#tasks{
+  width: 81.5%;
+  position: relative;
+  margin-top: 40px;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+.task{
+  background: #fff;
+  height: 35px;
+  padding: 0px 5px;
+  border-radius: 0px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 2px solid #d1d3d4;
+}
+.task span{
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.task button{
+  border: none;
+  background: #19A68C;
+  height: 100%;
+  width: 45px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.completed{
+  text-decoration: line-through;
+  opacity: 0.7;
+  background-color: rgba(181, 252, 210, 1);
+}
+/*END*/
+
+
+/*Planner picture*/
+#plannerpic{
+  display: inline-block;
+  border: 1px solid black;
+  margin: 10px 20px 20px 40px;
+}
+
+/*styling the "gototop" and "contact us" */
+#stickynotes {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  list-style-type: none;
+  text-align: left;
+  left: 0px;
+}
+#stickynotes ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 10px;
+}
+#stickynotes img{
+  border: 1px solid black;
+}
+/*END OF BOTTOM OF THE PAGE*/

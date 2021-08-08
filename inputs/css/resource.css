@@ -1,0 +1,436 @@
+body {
+  margin:0px;
+  text-align: center;
+  font-family: "Bodoni MT", sans-serif;
+  background: #eeccb4;
+}
+
+/*BACKGROUND COLOR*/
+#background{
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+/*END*/
+
+/*style head*/
+.header {
+  margin: 0px;
+  text-align: center;
+  background-color: #e5edea;
+  background-size: cover;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+/*style hr*/
+hr{
+  height:5px;
+  background-color: #f97b7b;
+  width: 80%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/*styling the hoverable top nav*/
+#mySidenav a {
+  position: absolute;
+  top: 0px;
+  transition: 0.5s;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 5px 5px ;
+}
+/*background color of active page*/
+#mySidenav a.active{
+  top: 0px;
+  padding-top: 85px;
+}
+/*when hover over*/
+#mySidenav a:hover {
+  top: 0px;
+  padding-top: 75px;
+  background-color: #ff99cc;
+}
+#about {
+  right: 600px;
+  padding-top: 75px;
+  background-color: #ffcc99;
+}
+#resources {
+  right: 410px;
+  padding-top: 75px;
+  background-color: #ffff99;
+}
+#signup {
+  right: 220px;
+  padding-top: 75px;
+  background-color: #ccffcc;
+}
+#game {
+  right: 30px;
+  padding-top: 75px;
+  background-color: #33ccff;
+}
+/*end of side nav bar*/
+/*END*/
+
+/*GREETINGS*/
+/*welcome message*/
+#welcomemsg{
+  margin-left:200px;
+  text-align: left;
+}
+.welcomeuserh3{
+  font-size: 50px;
+  padding: 0px;
+  margin: 100px 0px 0px 0px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+.welcomeuserh1{
+  font-size: 80px;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 5px;
+  word-spacing: 15px;
+  padding: 0px;
+  margin-top: 0px;
+  font-family: 'Poppins', sans-serif;
+
+  /*typing animation*/
+  animation: type 4s steps(13) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  width: 13ch;
+}
+@keyframes type{
+  0%{
+    width: 0ch;
+  }
+  50%,100% {
+    transform: translate(0, 0);
+    width: 13ch;
+  }
+}
+#intro{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  font-size: 25px;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+}
+
+/*to go to the different resource categories*/
+.navbutton{
+  text-align: left;
+  word-spacing: 50px;
+  display: inline-block;
+  margin-top: 75px;
+  margin-left:0px;
+  padding: 0px;
+}
+.tablink{
+  padding:0px;
+  margin: auto;
+
+  border: 1px solid #663300;
+  border-radius: 30px;
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 200px;
+
+  box-shadow: inset 0 0 0 0 #f97b7b;
+  transition: ease-out 0.3s;
+}
+.tablink a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+/*when hover over*/
+.tablink:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+
+  box-shadow: inset 200px 0 0 0 #f97b7b;
+  cursor: pointer;
+}
+/*END*/
+
+/*icon card slider*/
+/*end*/
+
+/*content*/
+.content{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 200px;
+  margin-top: 95px;
+}
+/*popdown*/
+.popdown{
+  left: 50%;
+  background-color: #FFFFCC;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin:0px;
+}
+.active, .popdown:hover {
+  background-color: #FFFF66;
+  border-right: solid 2px black;
+}
+.panel {
+  left: 50%;
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  width: 80%;
+  padding:0px;
+  margin:0px;
+  background-color:rgba(252,242,243,0.5);
+}
+/*panel within popdown*/
+/*notes - primaryschool*/
+.prisch{
+  width: 100%;
+  align-items: center;
+  display: inline-block;
+  margin: 0px 20px;
+  padding: 0px;
+}
+.prischtab{
+  padding:0px;
+  margin: auto;
+
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 250px;
+}
+.prischtab a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-family: "Bodoni MT", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.prischtab:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.prischcontent{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin: 5px;
+}
+/*notes - secondary school*/
+.secschtab{
+  padding:0px;
+  margin: auto;
+
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 250px;
+}
+.secschtab a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-family: "Bodoni MT", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.secschtab:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.secschcontent{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin: 5px;
+}
+/*notes - tertiary education*/
+.jctab{
+  padding:0px;
+  margin: auto;
+
+  background: #f6fb98;
+  opacity: 75%;
+
+  height:50px;
+  width: 250px;
+}
+.jctab a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-family: "Bodoni MT", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.jctab:hover{
+  background-color: #f97b7b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.jccontent{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  margin: 5px;
+}
+/*carousel for the images*/
+/*scroll bar for the notes content*/
+/* Slideshow container */
+.scrollable-y{
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.slideshow-container {
+  min-width: 210px;
+  max-width: 600px;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+  align-items: center;
+}
+.slideshow-container img{
+  width: 100%;
+  height: 100%;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*END*/
+
+/*STYLING THE BOTTOM OF THE PAGE */
+/*styling the "gototop" and "contact us" */
+#stickynotes {
+  position: fixed;
+  bottom: 0;
+  list-style-type: none;
+  text-align: left;
+  margin-top: 30px;
+}
+#stickynotes p{
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+#stickynotes img{
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  opacity: 0.7;
+}
+#stickynotes:hover img{
+  opacity: 0.3;
+}
+
+/*END OF BOTTOM PAGE*/

@@ -24,183 +24,389 @@
     </div>
   </div>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="index.html" id="about">ABOUT US</a>
-    <a  href="resources2.html" id="resources">RESOURCES</a>
-    <a href="signup.html" id="signup">FEEDBACK</a>
-    <a class="active" href="calendar.html" id="game">CALENDAR</a>
-    <!--<a href="game.html" id="game">GAMES </a>-->
-  </div>
+  <div class="bodycontent">
+    <div class="clock">
+      <span id="clock"></span>
+      <span class="temperature-value">- °C</span>
+    </div>
+    <!--script for clock-->
+    <script type="text/javascript">
+      //clock
+      function clock(){
+        // get the time
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var midday;
 
-  <div class="greetings" >
-    <h3> Unclear of what to do today? </h3>
-    <h1> CALENDAR <br> FOR YOU </h1>
-  </div>
+        hours = updateTime(hours);
+        minutes = updateTime(minutes);
+        seconds = updateTime(seconds);
 
-  <div class="navbutton">
-    <!--Onclick full page after the hr -->
-    <button class="tablink"><a href="calendar2.html">Calendar</a></button>
-    <button class="tablink" onclick="openPage('daily', this, '#f97b7b')" id="defaultOpen"><a href="#daily">Planner</a></button>
-    <button class="tablink" onclick="openPage('to-do', this, '#f97b7b')"><a href="#to-do">To-do</a></button>
-  </div>
+        //if else condition
+        midday = (hours >= 12) ? "PM" : "AM";
 
-<hr>
+        document.getElementById("clock").innerHTML = "<span>" + hours +"</span>" +"<span>"+ minutes +"</span>" +"<span>"+ seconds +"</span>"+"<span>"+midday+"</span>";
 
-<div id="daily" class="content">
-  <h3> Daily Planner</h3>
-  <button class="popdown"> Reasons why You need a planner</button>
-  <div class="panel">
-    <ul>
-      <li>have a direction of what tou are doing for today!</li>
-      <li>Set goals to make youself more productive!</li>
-    </ul>
-  </div>
-  <button class="popdown"> Types of Planner</button>
-  <div class="panel">
-    <p> All you need to do is to simply key in the events and you can have.</p>
-    <p> Types of planner</p>
-    <ol>
-      <li class="highlightedtext">Daily</li>
-      <li class="highlightedtext">Weekly</li>
-      <li>Monthly</li>
-      <li> Yearly</li>
-      <ul>
-        <li> This option is more suitable for those who want to take note of their friends' birthday, events, public holiday and other importatn dates.</li>
-      </ul>
-    </ol>
-  </div>
-  <button class="popdown">Examples</button>
-  <div class="panel">
-    <p> Take a look at te different types of planner done by studygrammers!<br>
-    You can find more of such examples in Pinterest when you search "Monthly planner" or "Bullet Journal"</p>
-    <img src="inputs/images/dailyplanner.jpg" alt="Daily Planner" id="plannerpic" height="300" width="300">
-    <img src="inputs/images/weeklyplanner.jpg" alt="Weekly planner" id="plannerpic" height="300" width="300">
-    <br>
-    <img src="inputs/images/monthlyplanner.jpg" alt="Monthly planner" id="plannerpic" height="300" width="300">
-    <img src="inputs/images/yearly.jpg" alt="Yearly planner" id="plannerpic" height="300" width="300">
-  </div>
-</div>
-<div id="to-do" class="content">
-  <h3>Do remember to create your To-Do list!</h3>
-  <p>Ensure that you are able to finish them within the time-frame you've set for yourself<br>
-  Do not over-plan! Have some time to talk to your friends and take a break</p>
-  <div class="todolist">
-    <div class="container">
-      <div id="newtask">
-        <input type="text" placeholder="Enter Task">
-        <button id="push">Add</button>
-      </div>
-      <div id="tasks"></div>
-      </div>
-    <script>
-      document.querySelector('#push').onclick = function() {
-        if(document.querySelector('#newtask input').value.length == 0){
-          alert("Please Enter a Task");
+        var time = setTimeout(function(){
+          clock();
+        }, 1000);
+      }
+      //sees if the time/sec is a single digit
+      function updateTime(k){
+        if (k <10){
+          return "0" + k;
         }
         else{
-          document.querySelector('#tasks').innerHTML += `<div class="task">
-          <span id="taskname">
-          ${document.querySelector('#newtask input').value}
-          </span>
-          <button class="delete">X</button>
-          </div>
-          `;
-          var current_tasks = document.querySelectorAll('.delete');
-          for (var i = 0; i < current_tasks.length; i++) {
-            current_tasks[i].onclick = function (){
-              this.parentNode.remove();
-            }
-          }
-          var tasks = document.querySelectorAll('#taskname');
-          for (var i = 0; i < tasks.length; i++) {
-            tasks[i].onclick = function (){
-              this.classList.toggle('completed');
-            }
-          }
-          document.querySelector('#newtask input').value = "";
+          return k;
         }
       }
-    </script>
-  </div>
-</div>
 
-<!--Script for choosing the respective planners-->
-<script>
-  var acc = document.getElementsByClassName("popdown");
-  var i;
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
+      clock()
+      // weather
+      const tempElement = document.querySelector(".temperature-value");
+      const notificationElement = document.querySelector(".notification");
+      const weather = {};
+
+      weather.temperature = {
+          unit : "celsius"
       }
+      // APP CONSTS AND VARS
+      const KELVIN = 273;
+      // API KEY
+      const key = "82005d27a116c2880c8f0fcb866998a0";
+
+      // CHECK IF BROWSER SUPPORTS GEOLOCATION
+      if('geolocation' in navigator){
+          navigator.geolocation.getCurrentPosition(setPosition, showError);
+      }else{
+          notificationElement.style.display = "block";
+          notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
+      }
+      // SET USER'S POSITION
+      function setPosition(position){
+          let latitude = position.coords.latitude;
+          let longitude = position.coords.longitude;
+
+          getWeather(latitude, longitude);
+      }
+
+      // SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
+      function showError(error){
+          notificationElement.style.display = "block";
+          notificationElement.innerHTML = `<p> ${error.message} </p>`;
+      }
+
+      //get weather from api provider
+      function getWeather(latitude, longitude){
+          let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+
+          fetch(api)
+              .then(function(response){
+                  let data = response.json();
+                  return data;
+              })
+              .then(function(data){
+                weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+                weather.iconId = data.weather[0].icon;
+              })
+              .then(function(){
+                  displayWeather();
+              });
+      }
+
+      //display weather to user
+      function displayWeather(){
+          tempElement.innerHTML = `${weather.temperature.value}°C`;
+
+      }
+    </script>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="index.html" id="about">ABOUT US</a>
+      <a  href="resources2.html" id="resources">RESOURCES</a>
+      <a href="signup.html" id="signup">FEEDBACK</a>
+      <a class="active" href="calendar.html" id="game">CALENDAR</a>
+      <!--<a href="game.html" id="game">GAMES </a>-->
+    </div>
+
+    <div id="welcomemsg" class="top">
+      <h3 class="welcomeuserh3"> Unclear of what to do today? </h3>
+      <h1 class="welcomeuserh1"> CALENDAR <br> FOR YOU </h1>
+    </div>
+
+    <div class="navbutton">
+      <!--Onclick full page after the hr -->
+      <button class="tablink"><a href="calendar2.html">Calendar</a></button>
+      <button class="tablink" onclick="openPage('daily', this, '#f97b7b')" id="defaultOpen"><a href="#daily">Planner</a></button>
+      <button class="tablink" onclick="openPage('to-do', this, '#f97b7b')"><a href="#to-do">To-do</a></button>
+      <button class="tablink" onclick="openPage('stopwatchdiv', this, '#f97b7b')"><a href="#stopwatch">StudyTimer</a></button>
+    </div>
+
+  <hr>
+
+  <div id="daily" class="content">
+    <h3> Daily Planner</h3>
+    <button class="popdown"> Reasons why You need a planner</button>
+    <div class="panel">
+      <div class="panelcontent">
+        <ul>
+          <li>have a direction of what tou are doing for today!</li>
+          <li>Set goals to make youself more productive!</li>
+        </ul>
+      </div>
+    </div>
+    <button class="popdown"> Types of Planner</button>
+    <div class="panel">
+      <div class="panelcontent">
+        <p> All you need to do is to simply key in the events and you can have.</p>
+        <p> Types of planner</p>
+        <ol>
+          <li class="highlightedtext">Daily</li>
+          <li class="highlightedtext">Weekly</li>
+          <li>Monthly</li>
+          <li> Yearly</li>
+          <ul>
+            <li> This option is more suitable for those who want to take note of their friends' birthday, events, public holiday and other importatn dates.</li>
+          </ul>
+        </ol>
+      </div>
+    </div>
+    <button class="popdown">Examples</button>
+    <div class="panel">
+      <div class="panelcontent">
+        <p> Take a look at te different types of planner done by studygrammers!<br>
+        You can find more of such examples in Pinterest when you search "Monthly planner" or "Bullet Journal"</p>
+        <a href="https://youtu.be/byxebTMxRDA">
+          <img src="inputs/images/dailyplanner.jpg" alt="Daily Planner" id="plannerpic">
+        </a>
+        <a href="https://youtu.be/6BE5TT6PotY">
+          <img src="inputs/images/weeklyplanner.jpg" alt="Weekly planner" id="plannerpic">
+        </a>
+        <br>
+        <a href="https://youtu.be/nXxm10eAiVI">
+          <img src="inputs/images/monthlyplanner.jpg" alt="Monthly planner" id="plannerpic">
+        </a>
+        <a href="https://youtu.be/VQUH8VLE0YE">
+          <img src="inputs/images/yearly.jpg" alt="Yearly planner" id="plannerpic">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="to-do" class="content">
+    <h3>Do remember to create your To-Do list!</h3>
+    <p>Ensure that you are able to finish them within the time-frame you've set for yourself<br>
+    Do not over-plan! Have some time to talk to your friends and take a break</p>
+    <div class="todolist">
+      <div class="container">
+        <div id="newtask">
+          <input type="text" placeholder="Enter Task">
+          <button id="push">Add</button>
+        </div>
+        <div id="tasks"></div>
+        </div>
+      <script>
+        document.querySelector('#push').onclick = function() {
+          if(document.querySelector('#newtask input').value.length == 0){
+            alert("Please Enter a Task");
+          }
+          else{
+            document.querySelector('#tasks').innerHTML += `<div class="task">
+            <span id="taskname">
+            ${document.querySelector('#newtask input').value}
+            </span>
+            <button class="delete">X</button>
+            </div>
+            `;
+            var current_tasks = document.querySelectorAll('.delete');
+            for (var i = 0; i < current_tasks.length; i++) {
+              current_tasks[i].onclick = function (){
+                this.parentNode.remove();
+              }
+            }
+            var tasks = document.querySelectorAll('#taskname');
+            for (var i = 0; i < tasks.length; i++) {
+              tasks[i].onclick = function (){
+                this.classList.toggle('completed');
+              }
+            }
+            document.querySelector('#newtask input').value = "";
+          }
+        }
+      </script>
+    </div>
+  </div>
+  <div id="stopwatchdiv" class="content">
+    <h3>Time yourself studying!</h3>
+    <p>Being focused and studying will increase your productivity. Start timing your study sessions now!</p>
+    <div class="sstopwatch">
+      <div class="stopwatch">
+        <div id="stopwatch">00:00:00</div>
+      </div>
+      <ul id="buttons">
+        <li><button id="start" class="watch-btn" onclick="startTimer()">Start</button></li>
+        <li><button id="pause" class="watch-btn" onclick="stopTimer()">Stop</button></li>
+        <li><button id="reset" class="watch-btn" onclick="resetTimer()">Reset</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Script for choosing the respective planners-->
+  <script>
+    //script for stopwatch and Audio
+    const startaud = document.getElementById("start");
+    const pauseaud = document.getElementById("pause");
+    const refreshaud = document.getElementById("reset");
+    startaud.addEventListener("click",function(){
+      var myAudio = new Audio('inputs/chillLofi.mp3');
+      myAudio.play();
+      //loop the music
+      myAudio.loop = true;
+      //pause the audio
+      pauseaud.addEventListener("click",function(){
+        myAudio.pause();
+      });
+      //pause the audio music
+      refreshaud.addEventListener("click",function(){
+        myAudio.pause();
+      });
     });
-  }
-  function openPage(pageName,elmnt,color) {
-    var i, content, tablinks;
-    content = document.getElementsByClassName("content");
-    for (i = 0; i < content.length; i++) {
-      content[i].style.display = "none";
+    // stopwatch
+    const timer = document.getElementById('stopwatch');
+    var hr = 0;
+    var min = 0;
+    var sec = 0;
+    var stoptime = true;
+    function startTimer() {
+      if (stoptime == true) {
+            stoptime = false;
+            timerCycle();
+        }
     }
-    tablinks = document.getElementsByClassName("tablink");
-     for (i = 0; i < tablinks.length; i++) {
-       tablinks[i].style.backgroundColor = "";
-     }
-    document.getElementById(pageName).style.display = "block";
-    elmnt.style.backgroundColor = color;
-  }
+    function stopTimer() {
+      if (stoptime == false) {
+        stoptime = true;
+      }
+    }
+    function timerCycle() {
+        if (stoptime == false) {
+        sec = parseInt(sec);
+        min = parseInt(min);
+        hr = parseInt(hr);
+        sec = sec + 1;
+        if (sec == 60) {
+          min = min + 1;
+          sec = 0;
+        }
+        if (min == 60) {
+          hr = hr + 1;
+          min = 0;
+          sec = 0;
+        }
+        if (sec < 10 || sec == 0) {
+          sec = '0' + sec;
+        }
+        if (min < 10 || min == 0) {
+          min = '0' + min;
+        }
+        if (hr < 10 || hr == 0) {
+          hr = '0' + hr;
+        }
+        timer.innerHTML = hr + ':' + min + ':' + sec;
+        setTimeout("timerCycle()", 1000);
+      }
+    }
+    function resetTimer() {
+        timer.innerHTML = "00:00:00";
+        stoptime = true;
+        hr = 0;
+        sec = 0;
+        min = 0;
+    }
 
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
-</script>
 
-<hr>
+    //script for "planner" popdowns
+    var acc = document.getElementsByClassName("popdown");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
 
-<footer class="footer">
-   <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>pikiPoko</h4>
-        <ul>
-          <li><a href="recoures2.html">Resources</a></li>
-          <li><a href="calendar.html">Calendar</a></li>
-          <li><a href="signup.html">Feedback form</a></li>
-          <!--<li><a href="game.html">Games</a></li>-->
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>About us</h4>
-        <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
-          We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
-        This website does not is advertisement free in order to not promote young people to buy things from online often.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Features</h4>
-        <ul>
-          <li><a href="calendar">Calendar</a></li>
-          <li><a href="notes.html">Notes reference</a></li>
-          <li><a href="notes.html">Exam papers</a></li>
-          <li><a href="resources2.html">Learning websites</a></li>
-          <!--<li><a href="game.html">Games</a></li>-->
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>follow us</h4>
-        <div class="social-links">
+    // navbutton
+    function openPage(pageName,elmnt,color) {
+      var i, content, tablinks;
+      content = document.getElementsByClassName("content");
+      for (i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+       for (i = 0; i < tablinks.length; i++) {
+         tablinks[i].style.backgroundColor = "";
+       }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+
+  <hr>
+
+  <footer class="footer">
+     <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>pikiPoko</h4>
+          <ul>
+            <li><a href="recoures2.html">Resources</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="signup.html">Feedback form</a></li>
+            <li><a href="primarysch.html">Primary School - Notes</a></li>
+            <li><a href="secondarysch.html">Secondary School - Notes</a></li>
+            <li><a href="poly.html">Polytechnic - Notes</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About us</h4>
+          <p>PikiPoko is a study website that hopes that each and every student in Singapore can receive all the learning materials that they want.
+            <br><br>We hope that all of our learners are kind-hearted and will always be willing to share their materials. Learning things can be hard, and it would be harder if one is lost and does not have any good materials to learn from.
+          <br><br>This website is advertisement free in order to not promote young people to buy things from online often.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="calendar">Calendar</a></li>
+            <li><a href="resources2.html">Notes reference list</a></li>
+            <li><a href="primarysch.html">Primary School - Exam papers</a></li>
+            <li><a href="secondarysch.html">Secondary School - Exam papers</a></li>
+            <li><a href="resources2.html">Learning websites</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
           <div class="social-links">
-            <a href="mailto:212033J@mymail.nyp.edu.sg"><i class="fas fa-envelope-open-text"></i></a>
-            <a href="https://www.instagram.com/yonglinnnnnn/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/yonglin-xu-bb4588212/"><i class="fab fa-linkedin-in"></i></a>
+            <div class="social-links">
+              <a href="mailto:212033J@mymail.nyp.edu.sg"><i class="fas fa-envelope-open-text"></i></a>
+              <a href="https://www.instagram.com/yonglinnnnnn/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/yonglin-xu-bb4588212/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-   </div>
-</footer>
-
+     </div>
+  </footer>
+  </div>
 </section>
 
 </body>

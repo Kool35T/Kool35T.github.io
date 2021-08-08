@@ -1,75 +1,18 @@
 body {
   margin:0px;
   text-align: center;
-  font-family: "Franklin Gothic Book", sans-serif;
-}
-
-@font-face {
-  font-family: 'Playlist Script';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Playlist Script'), url('Playlist Script.woff') format('woff');
+  font-family: sans-serif;
 }
 #background{
-  background-image: url('../inputs/images/booksbg.jfif');
-  object-fit: cover;
+  background: #eeccb4;
   height: 100%;
   width: 100%;
   left:0;
 }
-.bodycontent{
-  padding: 0px;
-  margin: 0px auto;
-  width: 80%;
-  height: 100%;
-  background-color: rgba(229, 237, 234, 0.95);
-}
-/*CLOCK*/
-#greeting{
-  font-family: "Playlist Script";
-  font-size: 30px;
-  letter-spacing: 5px;
-  margin-bottom: 0px;
-  text-align: left;
-  left: 10px;
-  margin-left: 10px;
-}
-#clock span{
-  margin: 0;
-  display: inline-block;
-  left:0;
-  float: left;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #f97b7b;
-  box-shadow: 0 5px 15px #f97b7b;
-  color: black;
-  margin-left: 20px;
-}
-#clock span:first-child{
-  margin-left: 10px;
-}
-#clock span:last-child{
-  background-color: #FF5454;
-}
-/*FOR TEMPERATURE*/
-.temperature-value{
-  display: inline-block;
-  position: relative;
-  width: 50px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #FF5454;
-  box-shadow: 0 5px 15px #FF5454;
-  color: black;
-  margin-left: -900px;
-}
+
 /*LOG IN*/
 #login div{
-  font-family: "Franklin Gothic Book", sans-serif;
+  font-family: sans-serif;
   margin: 0;
   line-height: 1.5;
   box-sizing: border-box;
@@ -159,9 +102,6 @@ body {
 	font-size: 15px;
 	color:#000000;
 }
-.login-popup .box .form .form-control{
-  width: 80%;
-}
 .login-popup .box .form .form-control:focus{
 	outline: none;
 }
@@ -170,7 +110,7 @@ body {
 	color:#555555;
 }
 .login-popup .box .form .btn{
-	width: 80%;
+	width: 100%;
 	background-color: #E91E63;
 	margin-top:40px;
 	height: 45px;
@@ -183,6 +123,14 @@ body {
 }
 .login-popup .box .form .btn:focus{
 	outline: none;
+}
+.login-popup .box .form .close{
+  padding: 0;
+	position: absolute;
+	right: 10px;
+	top:0px;
+	font-size: 30px;
+	cursor: pointer;
 }
 /*responsive*/
 @media(max-width: 767px){
@@ -201,23 +149,23 @@ body {
 
 /*style head*/
 .header {
-  padding: 0px;
-  margin: auto;
+  margin: 0px;
   background-color: #e5edea;
   background-size: cover;
   color: black;
-  width: 80%;
+  width: 100%;
   text-align: left;
 }
+
 /*style hr*/
 hr{
   height:5px;
   background-color: #f97b7b;
   width: 80%;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 80px;
 }
+
 /*styling the hoverable top nav*/
 #mySidenav a {
   position: absolute;
@@ -229,10 +177,8 @@ hr{
   font-size: 20px;
   color: black;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   border-radius: 5px 5px ;
-  font-family: 'Playlist Script';
-  text-align: center;
 }
 /*background color of active page*/
 #mySidenav a.active{
@@ -242,96 +188,55 @@ hr{
 /*when hover over*/
 #mySidenav a:hover {
   top: 0px;
-  padding-top: 100px;
-  opacity: 0.85;
+  padding-top: 75px;
+  background-color: #ff99cc;
 }
 #about {
-  right: 745px;
+  right: 600px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ff9914;
 }
 #resources {
-  right: 555px;
+  right: 410px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ffff99;
 }
 #signup {
-  right: 365px;
+  right: 220px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ccffcc;
 }
 #game {
-  right: 175px;
+  right: 30px;
   padding-top: 75px;
-  background: #f97b7b;
-}
-.navbutton2{
-  background: #f97b7b;
-  color: black;
-  min-width: 175px;
-  padding: 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-.dropdownbtn{
-  position: relative;
-  display: inline-block;
-  visibility: hidden;
-  top: -10px;
-  right: 20px;
-}
-.dropdown-content{
-  display: none;
-  position: absolute;
-  background: #f97b7b;
-  opacity: 0.8;
-  min-width: 175px;
-}
-.dropdown-content a{
-  color: black;
-  padding: 10px 13px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.dropdownbtn:hover .dropdown-content{
-  display: block;
-}
-/*responsive*/
-@media only screen and (max-width: 600px) {
-  /* For tablets or phone */
-  .dropdownbtn{
-    width: 8%;
-    visibility: visible;
-  }
-  #mySidenav{
-    display: none;
-  }
+  background-color: #33ccff;
 }
 /*end of side nav bar*/
+
+/*BACKGROUND COLOR*/
+#background{
+  background: #eeccb4;
+  height: 100%;
+  width: 100%;
+  left:0;
+}
+/*END*/
 
 /*GREETINGS*/
 /*welcome message*/
 #welcomemsg{
-  margin: auto;
-  padding: 0px 70px;
-  width: 80%;
+  margin-left:200px;
   text-align: left;
-  margin-top: 70px;
 }
 .welcomeuserh3{
   font-size: 50px;
   padding: 0px;
-  margin: 0px;
+  margin: 100px 0px 0px 0px;
   font-style: italic;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .welcomeuserh1{
-  width: 80%;
   font-size: 80px;
   font-weight: bold;
   font-style: italic;
@@ -339,9 +244,9 @@ hr{
   letter-spacing: 5px;
   word-spacing: 15px;
   padding: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: sans-serif;
+  margin-top: 0px;
+  font-family: 'Poppins', sans-serif;
+
   /*typing animation*/
   animation: type 4s steps(13) infinite;
   overflow: hidden;
@@ -358,13 +263,21 @@ hr{
     width: 13ch;
   }
 }
+#intro{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 0px;
+  font-size: 25px;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+}
 
 /*NAVIGATE WITHIN THE MAIN PAGE*/
 .navbutton{
   text-align: left;
   word-spacing: 50px;
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-left:0px;
   padding: 0px;
 }
@@ -387,9 +300,9 @@ hr{
   text-decoration: none;
   color: black;
   font-size: 20px;
-  font-family: 'Playlist Script';
+  font-family: "Bodoni MT", sans-serif;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 /*when hover over*/
 .tablink:hover{
@@ -405,21 +318,15 @@ hr{
   font-size: 20px;
   margin-left: 100px;
   margin-top: 95px;
-  width: 80%;
-  margin: auto;
 }
 
 /*carousel*/
 /* Slideshow container */
-#carousel{
-  margin-top: 40px;
-}
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin-left: 250px;
   padding: 0px;
-  margin: auto;
 }
 /* Next & previous buttons */
 .prev, .next {
@@ -525,7 +432,7 @@ hr{
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: atuo;
+  margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -546,7 +453,6 @@ hr{
   to {opacity: 1}
 }
 @keyframes fade {
-
   from {opacity: .4}
   to {opacity: 1}
 }
@@ -555,188 +461,94 @@ hr{
   .prev, .next,.text {font-size: 11px}
 }
 /*END*/
-/*FEATURES*/
 
-#ffeatures{
+#features h1{
   text-align: left;
-  font-family: "Playlist Script";
-  font-size: 50px;
-  letter-spacing: 5px;
-  padding: 0 50px;
+  left: 200px;
+  font-style: bold;
 }
-#fffeatures{
+#features {
   text-align: left;
-  padding: 0 50px;
+  margin-left: 200px;
 }
-/*REFERENCE CARD FLIPPER*/
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-  display: inline-block;
-  margin-left: 40px;
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.flip-card-front {
-  background: rgba(252, 233, 220,1);
-  color: black;
-}
-.flip-card-back {
-  background: rgba(252, 233, 220,1);
-  opacity: 1;
-  color: black;
-  margin: auto;
-  transform: rotateY(180deg);
-}
-.flip-card-back h1{
-  margin-top: 80px;
-  font-family: 'Playlist Script';
+#features h1{
   font-size: 30px;
-  text-transform: capitalize;
-  letter-spacing: 4px;
+  font-weight: 350;
+  text-decoration: underline;
 }
-.flip-card-back p{
-  padding: 10px;
-  font-size: 15px;
-}
-/*about us*/
-#aboutus{
-  width: 80%;
-  margin: auto;
-}
-#aboutus h3{
-  margin-top: 80px;
-  font-family: 'Playlist Script';
-  font-size: 50px;
-  text-transform: capitalize;
+#features p{
   text-align: left;
-  letter-spacing: 6px;
-}
-#aboutus h4{
-  font-size: 30px;
-  text-align: left;
-  margin-bottom: 0;
-}
-#aboutus p{
+  margin-left: 250px;
   font-size: 20px;
+}
+.featureIMAGES{
+  text-align: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+}
+.featureIMAGES img{
+  padding: 15px;
+}
+.features-images{
+  border: solid 1px black;
+  text-align: center;
+  margin: 0px;
+  margin-left: 15px;
+  display: inline-block;
+}
+.features-overlay{
+  position: absolute;
+  top:0;
+  bottom:0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s ease;
+  background-color:rgba(243, 160, 160, 0.9);
+}
+.features-text{
+  color: black;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  }/*about us*/
+#aboutus h3{
   text-align: left;
-  font-weight: normal;
-}
-.table{
-  background-color: #ffb8b8;
-  border-collapse: collapse;
-}
-.table td{
-  padding: 10px 10px;
-  max-width: 150px;
-}
-.table th{
-  padding: 5px 10px;
-  font-size: 30px;
-  font-family: "Playlist Script";
+  margin-left: 120px;
+  margin-top: 95px;
+  font-size: 40px;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+  font-style: italic;
 }
 /*END*/
 
-/*FOOTER*/
-.footer .container{
-	max-width: 1170px;
-	margin:auto;
-}
-.footer .row{
-	display: flex;
-	flex-wrap: wrap;
-}
-.footer ul{
-	list-style: none;
-}
-.footer{
-    padding: 70px 0;
-}
-.footer-col{
-   width: 20%;
-   padding: 0 15px;
-   margin-left: 25px;
-}
-.footer-col p {
+/*styling the "gototop" and "contact us" */
+#stickynotes {
+  position: fixed;
+  bottom: 0;
+  list-style-type: none;
   text-align: left;
+  margin-top: 30px;
 }
-.footer-col h4{
-	font-size: 30px;
-  font-family: 'Playlist script';
-	color: black;
-  letter-spacing: 3px;
-	text-transform: capitalize;
-	margin-bottom: 25px;
-	font-weight: 500;
-	position: relative;
+#stickynotes p{
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
 }
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
+#stickynotes img{
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  opacity: 0.7;
 }
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
+#stickynotes:hover img{
+  opacity: 0.3;
 }
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: black;
-	text-decoration: none;
-	font-weight: 300;
-	color: black;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #531cd4;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: black;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
-
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
+/*END OF BOTTOM OF THE PAGE*/

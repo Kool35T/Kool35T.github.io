@@ -12,22 +12,61 @@ body {
 
 /*style head*/
 .header {
-  margin: 0px;
-  text-align: center;
+  padding: 0px;
+  margin: auto;
   background-color: #e5edea;
   background-size: cover;
   color: black;
-  width: 100%;
+  width: 80%;
   text-align: left;
 }
-
+#clock span{
+  margin: 0;
+  display: inline-block;
+  left:0;
+  float: left;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f97b7b;
+  box-shadow: 0 5px 15px #f97b7b;
+  color: black;
+  margin-left: 20px;
+}
+#clock span:first-child{
+  margin-left: 10px;
+}
+#clock span:last-child{
+  background-color: #FF5454;
+}
+/*FOR TEMPERATURE*/
+.temperature-value{
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #FF5454;
+  box-shadow: 0 5px 15px #FF5454;
+  color: black;
+  margin-left: -900px;
+}
 #background{
-  background: #eeccb4;
+  background-image: url('../inputs/images/booksbg.jfif');
+  object-fit: cover;
   height: 100%;
   width: 100%;
   left:0;
 }
-
+.bodycontent{
+  padding: 0px;
+  margin: 0px auto;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(229, 237, 234, 0.95);
+}
 hr{
   height:5px;
   background-color: #f97b7b;
@@ -60,28 +99,28 @@ hr{
 /*when hover over*/
 #mySidenav a:hover {
   top: 0px;
-  padding-top: 75px;
-  background-color: #ff99cc;
+  padding-top: 100px;
+  opacity: 0.85;
 }
 #about {
-  right: 600px;
+  right: 745px;
   padding-top: 75px;
-  background-color: #ffcc99;
+  background: #f97b7b;
 }
 #resources {
-  right: 410px;
+  right: 555px;
   padding-top: 75px;
-  background-color: #ffff99;
+  background: #f97b7b;
 }
 #signup {
-  right: 220px;
+  right: 365px;
   padding-top: 75px;
-  background-color: #ccffcc;
+  background: #f97b7b;
 }
 #game {
-  right: 30px;
+  right: 175px;
   padding-top: 75px;
-  background-color: #33ccff;
+  background: #f97b7b;
 }
 .navbutton2{
   background-color: #4CAF50;
@@ -122,7 +161,7 @@ hr{
   background-color: #3e8e41;
 }
 /*responsive*/
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 438px) {
   /* For tablets or phone */
   .dropdownbtn{
     width: 8%;
@@ -135,30 +174,40 @@ hr{
 /*end of side nav bar*/
 
 /*GREETINGS*/
-.greetings{
-  padding: 0px;
-  margin: 100px 0px 0px 200px;
+/*welcome message*/
+#welcomemsg{
+  margin: auto;
+  padding: 0px 70px;
+  width: 80%;
   text-align: left;
-  font-family: "Franklin Gothic Book", sans-serif;
 }
-.greetings h3{
-  margin-top: 50px;
-  font-size: 30px;
+.welcomeuserh3{
+  font-size: 45px;
+  padding: 0px;
+  padding-top: 80px;
   margin: 0px;
+  font-style: italic;
+  font-weight: bold;
   font-family: sans-serif;
 }
-.greetings h1{
-  font-size: 80px;
-  letter-spacing: 10px;
-  margin: 0;
+.welcomeuserh1{
+  width: 80%;
+  font-size: 65px;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 5px;
+  word-spacing: 15px;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-family: sans-serif;
-
   /*typing animation*/
   animation: type 4s steps(12) infinite;
   overflow: hidden;
   white-space: nowrap;
   border-right: 4px solid black;
-  width: 12ch;
+  width: 13ch;
 }
 @keyframes type{
   50%,100% {
@@ -215,18 +264,27 @@ hr{
 .content{
   font-weight: bold;
   font-size: 20px;
-  text-align: left;
-  margin-left: 200px;
+  width: 80%;
+  margin: auto;
   margin-top: 95px;
 }
-
+.content h3{
+  text-align: left;
+  font-family: 'Playlist Script';
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+.content p{
+  text-align: left;
+  font-size: 1.2em;
+}
 /*popdown*/
 .popdown{
   background-color: #FFFFCC;
   color: #444;
   cursor: pointer;
   padding: 18px;
-  width: 80%;
+  width: 100%;
   border: none;
   text-align: left;
   outline: none;
@@ -238,13 +296,23 @@ hr{
   border-right: solid 2px black;
 }
 .panel {
-  padding: 0 18px;
+  padding: 0px;
   display: none;
   background-color: white;
   overflow: hidden;
-  width: 77.3%;
+  width: 100%;
 }
-
+.panelcontent{
+  text-align: left;
+  padding: 0 30px;
+}
+.panelcontent #plannerpic{
+  width: 300px;
+  height: 300px;
+  margin: 10px 20px 0 0;
+  object-fit: fill;
+  border: solid 1px black;
+}
 /*to-do list*/
 #todolist{
   padding: 0;
@@ -252,7 +320,7 @@ hr{
   box-sizing: border-box;
   background-color: #1d2630;
   height: 35%;
-  width: 70%;
+  width: 90%;
   position: absolute;
   margin: auto;
   top: 50px;
@@ -263,7 +331,7 @@ hr{
 }
 /* Include the padding and border in an element's total width and height */
 #newtask{
-  width: 83%;
+  width: 100%;
   position: relative;
   padding: 15px 10px;
   background: #fff;
@@ -272,7 +340,7 @@ hr{
 }
 #newtask input{
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
   height: 30px;
   font-size: 15px;
   border: 2px solid #d1d3d4;
@@ -301,7 +369,7 @@ hr{
   cursor: pointer;
 }
 #tasks{
-  width: 81.5%;
+  width: 100%;
   position: relative;
   margin-top: 40px;
   background: #fff;
@@ -340,8 +408,48 @@ hr{
   background-color: rgba(181, 252, 210, 1);
 }
 /*END*/
+/*STOPWATCH*/
+#stopwatchdiv .sstopwatch{
+  width: 80%;
+  margin:auto;
+}
+#stopwatchdiv #stopwatch{
+  font-size: 100px;
+  align-items: center;
+  margin-top: 30px;
+}
+#stopwatchdiv #buttons{
+  margin: auto;
+  top: 55%;
+}
+#stopwatchdiv .watch-btn{
+  margin: 20px auto;
+  width: 150px;
+  height: 40px;
+  border: solid 1px black;
+  border-radius: 50px;
+  background-color: #f6fb98;
+  font-size: 20px;
+  font-family: 'Playlist Script';
+  letter-spacing: 3px;
+  color: black;
+  cursor: pointer;
+  outline: none;
 
+  box-shadow: inset 0 0 0 0 #f97b7b;
+  transition: ease-out 0.3s;
+}
+#stopwatchdiv .watch-btn:hover{
+  background-color: #f97b7b;
 
+  box-shadow: inset 200px 0 0 0 #f97b7b;
+  cursor: pointer;
+}
+#stopwatchdiv #buttons li{
+  display: inline;
+  padding-left: 10px;
+}
+/*END*/
 /*FOOTER*/
 .footer .container{
 	max-width: 1170px;
@@ -355,7 +463,6 @@ hr{
 	list-style: none;
 }
 .footer{
-	background-color: #eeccb4;
     padding: 70px 0;
 }
 .footer-col{
@@ -400,7 +507,7 @@ hr{
 	transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-	color: #ffffff;
+	color: #531cd4;
 	padding-left: 8px;
 }
 .footer-col .social-links a{
@@ -425,10 +532,5 @@ hr{
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
 }
 }

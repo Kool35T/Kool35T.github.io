@@ -1,7 +1,8 @@
 body {
   margin:0px;
   text-align: center;
-  font-family: "Franklin Gothic Book", sans-serif;
+  font-family: sans-serif;
+  background: #eeccb4;
 }
 @font-face {
   font-family: 'Playlist Script';
@@ -11,62 +12,20 @@ body {
 }
 /*BACKGROUND COLOR*/
 #background{
-  background-image: url('../inputs/images/booksbg.jfif');
-  object-fit: cover;
   height: 100%;
   width: 100%;
   left:0;
 }
-.bodycontent{
-  padding: 0px;
-  margin: 0px auto;
-  width: 80%;
-  height: 100%;
-  background-color: rgba(229, 237, 234, 0.95);
-}
 /*END*/
-#clock span{
-  margin: 0;
-  display: inline-block;
-  left:0;
-  float: left;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #f97b7b;
-  box-shadow: 0 5px 15px #f97b7b;
-  color: black;
-  margin-left: 20px;
-}
-#clock span:first-child{
-  margin-left: 10px;
-}
-#clock span:last-child{
-  background-color: #FF5454;
-}
-/*FOR TEMPERATURE*/
-.temperature-value{
-  display: inline-block;
-  position: relative;
-  width: 50px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: #FF5454;
-  box-shadow: 0 5px 15px #FF5454;
-  color: black;
-  margin-left: -890px;
-}
 
 /*style head*/
 .header {
-  padding: 0px;
-  margin: auto;
+  margin: 0px;
+  text-align: center;
   background-color: #e5edea;
   background-size: cover;
   color: black;
-  width: 80%;
+  width: 100%;
   text-align: left;
 }
 
@@ -84,7 +43,7 @@ hr{
   position: absolute;
   top: 0px;
   transition: 0.5s;
-  padding: 15px;
+  padding: 10px;
   width: 150px;
   text-decoration: none;
   font-size: 20px;
@@ -93,7 +52,6 @@ hr{
   letter-spacing: 3px;
   border-radius: 5px 5px ;
   font-family: 'Playlist Script';
-  text-align: center;
 }
 /*background color of active page*/
 #mySidenav a.active{
@@ -103,96 +61,45 @@ hr{
 /*when hover over*/
 #mySidenav a:hover {
   top: 0px;
-  padding-top: 100px;
-  opacity: 0.85;
+  padding-top: 75px;
+  background-color: #ff99cc;
 }
 #about {
-  right: 745px;
+  right: 600px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ffcc99;
 }
 #resources {
-  right: 555px;
+  right: 410px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ffff99;
 }
 #signup {
-  right: 365px;
+  right: 220px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #ccffcc;
 }
 #game {
-  right: 175px;
+  right: 30px;
   padding-top: 75px;
-  background: #f97b7b;
+  background-color: #33ccff;
 }
-.navbutton3{
-  background: #f97b7b;
-  color: black;
-  min-width: 175px;
-  padding: 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-.dropdownbtn2{
-  position: relative;
-  display: inline-block;
-  visibility: hidden;
-  top: -10px;
-  right: 20px;
-}
-.dropdown-content1{
-  display: none;
-  position: absolute;
-  background: #f97b7b;
-  opacity: 0.8;
-  min-width: 175px;
-}
-.dropdown-content1 a{
-  color: black;
-  padding: 10px 13px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content1 a:hover {
-  background-color: #f1f1f1;
-}
-.dropdownbtn:hover .dropdown-content1{
-  display: block;
-}
-/*responsive*/
-@media only screen and (max-width: 767px) {
-  /* For tablets or phone */
-  .dropdownbtn2{
-    width: 8%;
-    visibility: visible;
-  }
-  #mySidenav{
-    display: none;
-  }
-}
+/*end of side nav bar*/
 /*END*/
 
 /*GREETINGS*/
 /*welcome message*/
 #welcomemsg{
-  margin: auto;
-  padding: 10px 70px;
-  width: 80%;
+  margin-left:200px;
   text-align: left;
 }
 .welcomeuserh3{
-  font-size: 50px;
+  font-size: 40px;
   padding: 0px;
-  padding-top: 80px;
-  margin: 0px;
+  margin: 100px 0px 0px 0px;
   font-style: italic;
-  font-weight: bold;
-  font-family: sans-serif;
 }
 .welcomeuserh1{
-  width: 80%;
   font-size: 80px;
   font-weight: bold;
   font-style: italic;
@@ -200,9 +107,8 @@ hr{
   letter-spacing: 5px;
   word-spacing: 15px;
   padding: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: sans-serif;
+  margin-top: 0px;
+
   /*typing animation*/
   animation: type 4s steps(13) infinite;
   overflow: hidden;
@@ -220,8 +126,6 @@ hr{
   }
 }
 #intro{
-  color: black;
-  opacity: 1;
   padding: 0px;
   margin: 0px;
   margin-top: 0px;
@@ -322,15 +226,8 @@ hr{
 }
 
 /*CONTENT BORDER*/
-#materials h2{
-  font-family: 'Playlist Script';
-  font-size: 50px;
-  letter-spacing: 7px;
-  text-align: left;
-  margin-left: 200px;
-}
 #notes{
-  width: 80%;
+  width: 70%;
   height: 1000px;
   overflow: hidden;
   overflow-y: scroll;
@@ -342,7 +239,7 @@ hr{
   background: rgba(252, 233, 220,0.4);
 }
 #exercisepractice{
-  width: 80%;
+  width: 70%;
   height: 1000px;
   overflow: hidden;
   overflow-y: scroll;
@@ -449,68 +346,30 @@ hr{
   .prev, .next,.text {font-size: 11px}
 }
 /*pri sch content*/
-.content{
-  margin-top: 75px;
-}
-.content-content img{
-  padding: 10px 0px;
-  margin: auto;
-}
-.content-content h2{
-  font-family: 'Playlist Script';
-  font-size: 50px;
-  letter-spacing: 5px;
+#pri h2{
+  font-size: 30px;
   padding: 0px;
+  text-align: left;
+  margin-left: 50px;
 }
 .content22{
   font-weight: bold;
   font-size: 20px;
   text-align: left;
-  margin: auto;
+  margin: 5px;
   padding: 10px 50px;
 }
-.content22 img{
-  height: 350px;
-  width: 600px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  border: solid 1px black;
-  background-color: #e3791c;
-}
-.content22 h3{
-  font-family: 'Playlist Script';
-  font-size: 30px;
-  letter-spacing: 5px;
-}
-#navpara a {
-  text-decoration: none;
-  font-style: italic;
-  font-family: 'Playlist Script';
-  font-size: 20px;
-  letter-spacing: 5px;
-  color: black;
-}
-#navpara:hover a{
-  text-decoration: none;
-  font-style: italic;
-  font-family: 'Playlist Script';
-  font-size: 20px;
-  letter-spacing: 8px;
-  color: #5362ea;
+.content-content img{
+  padding: 10px 50px;
+  margin: auto;
 }
 /*REFERENCE CARD FLIPPER*/
 .flip-card {
   background-color: transparent;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   perspective: 1000px;
   display: inline-block;
-  padding: 0;
-  margin-left: 20px;
-  margin-top: 10px;
 }
 .flip-card-inner {
   position: relative;
@@ -532,28 +391,15 @@ hr{
   backface-visibility: hidden;
 }
 .flip-card-front {
-  background: rgba(252, 233, 220,1);
+  background: rgba(252, 233, 220,0.4);
   color: black;
-  opacity: 1;
 }
 .flip-card-back {
-  background: rgba(252, 233, 220,1);
+  background: rgba(252, 233, 220,0.4);
   color: black;
   margin: auto;
   transform: rotateY(180deg);
-  opacity: 1;
 }
-.flip-card-back h1{
-  margin-top: 80px;
-  font-family: 'Playlist Script';
-  font-size: 30px;
-  text-transform: capitalize;
-}
-.flip-card-back p{
-  padding: 5px 0 0 0;
-  font-size: 15px;
-}
-
 /*3 row*/
 .row-3{
   display: inline-block;;
@@ -573,6 +419,7 @@ hr{
 	list-style: none;
 }
 .footer{
+	background-color: #eeccb4;
     padding: 70px 0;
 }
 .footer-col{
@@ -580,16 +427,11 @@ hr{
    padding: 0 15px;
    margin-left: 25px;
 }
-.footer-col p {
-  text-align: left;
-}
 .footer-col h4{
-	font-size: 30px;
-  font-family: 'Playlist script';
+	font-size: 18px;
 	color: black;
-  letter-spacing: 3px;
 	text-transform: capitalize;
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 	font-weight: 500;
 	position: relative;
 }
@@ -617,7 +459,7 @@ hr{
 	transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-	color: #531cd4;
+	color: #ffffff;
 	padding-left: 8px;
 }
 .footer-col .social-links a{
@@ -642,5 +484,10 @@ hr{
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
 }
 }

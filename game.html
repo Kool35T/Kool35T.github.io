@@ -1,0 +1,138 @@
+<html>
+<head>
+  <!--ICONS PAGE-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style media="screen">
+  .game .startquiz{
+    background: #f97b7b;
+    visibility: visible;
+    opacity: 1;
+    height: 70px;
+    padding: 20px 0;
+  }
+  .game .startquiz h2{
+    font-family: 'Playlist Script';
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  .game .startquizbtn{
+    margin-left: 30px;
+  }
+  .game .startquizbtn:hover{
+    color:rgba(186, 186, 186, 1);
+    cursor: pointer;
+  }
+  #countdown{
+    text-align: center;
+    border-radius: 10px;
+    border: solid 1px black;
+  }
+  .game .quiz{
+    visibility: hidden;
+  }
+  .game .quiz.show{
+    visibility: visible;
+    opacity: 1;
+    width: 80%;
+
+    text-align: center;
+    margin: auto;
+  }
+  .game .quiz.show .question{
+    padding-top: 80px;
+  }
+  .game .quiz.show .question h2{
+    font-size: 50px;
+    letter-spacing: 7px;
+  }
+  .game .quiz.show .question input{
+    width: 50%;
+    border: none;
+    height: 50px;
+    font-size: 40px;
+  }
+  .game .quiz.show .question button{
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 40px;
+    width: 100px;
+    background: #f6fb98;
+  }
+  .game .quiz.show .question button:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 4px;
+    background: #f97b7b;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="startquiz">
+      <h2>Are you ready for the quiz?<span class="startquizbtn" onclick="startquiz()"><i class="far fa-play-circle "></i><span></h2>
+    </div>
+    <div class="quiz">
+      <div id="countdown">
+        <p></p>
+      </div>
+      <div class="question">
+        <h2 id="question"></h2>
+        <input type="text" name="answer" id="answer" placeholder="Enter answer here">
+        <button id="submit">Enter</button>
+        <br>
+        <!--WHEN THE GAME ENDS-->
+        <div class="replay">
+          <button name="button" id="replay" onclick="startquiz()">Play again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  function startquiz(){
+    const game = document.querySelector(".game");
+    // refering to the section not the btn
+    const quiz = document.querySelector(".quiz");
+
+    document.getElementById("replay").disabled = true;
+    //show quiz
+    quiz.classList.add("show");
+    var minimum = 1;
+    var maximum = 100;
+    var int1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+    var int2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+    document.getElementById('question').innerHTML = int1 + " " + "+" + " " + int2;
+    var qanswer = int1 + int2;
+    document.getElementById('submit').addEventListener("click",function(){
+      var uanswer = document.getElementById('answer').value;
+      var right;
+      if (uanswer == qanswer) {
+        alert("Nice math skills! Refresh the page to play again!");
+        document.getElementById("replay").disabled = false;
+      } else {
+        alert("WRONG! Please try again!")
+      }
+    });
+  }
+    function gametimer(){
+      var sec = 15;
+      var time = setInterval(myTimer, 1000);
+
+      function myTimer() {
+          document.getElementById('countdown').innerHTML = sec + "sec left";
+          sec--;
+          if (sec == -1) {
+              clearInterval(time);
+              document.getElementById("answer").disabled = true;
+              alert("Time out!! :(");
+          }
+      }
+    }
+
+  </script>
+  </div>
+  </div>
+</body>
+</html>

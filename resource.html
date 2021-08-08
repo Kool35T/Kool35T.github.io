@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset = "utf-8">
+  <title> PikiPoko - Resources </title>
+  <!--resources css-->
+  <link rel="stylesheet" type="text/css" href="css/resource.css"/>
+</head>
+<body>
+  <section id="background">
+    <div class="header">
+      <a href="mainpage.html">
+      <img src="inputs/images/pikipoko.jpg" alt="PikiPoko" height="100px" width="300px"/></a>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="mainpage.html" id="about">ABOUT US</a>
+      <a class="active" href="#" id="resources">RESOURCES</a>
+      <a href="signup.html" id="signup">FEEDBACK</a>
+      <a href="calendar.html" id="game">CALENDAR</a>
+      <!--<a href="game.html" id="game">GAMES </a>-->
+    </div>
+
+    <div id="welcomemsg" class="top">
+      <h3 class="welcomeuserh3">Welcome</h3>
+      <h1 class="welcomeuserh1"> to Resources~  </h1>
+      <p id="intro">Get all your resources here. There are many resources you can tap onto. <br>Enjoy your stay here! </p>
+    </div>
+
+    <div class="navbutton">
+      <!--Onclick full page after the hr -->
+      <button class="tablink" onclick="openPage('materials', this, '#f97b7b')" id="defaultOpen"><a href="#materials">Materials</a></button>
+      <button class="tablink" onclick="openPage('notes', this, '#f97b7b')"><a href="#notes">Notes</a></button>
+      <button class="tablink" onclick="openPage('exercisepractice', this, '#f97b7b')"><a href="#exercisepractice">Exercises</a></button>
+    </div>
+
+  <hr style="height:5px; background-color:#f97b7b; width:80%; text-align:center; margin-top: 80px;">
+
+  <div id="materials" class="content">
+    <h3>References</h3>
+  </div>
+
+  <div id="notes" class="content">
+    <h3>Study notes to share!</h3>
+    <p>Your kind PikiPoko learners have shared materials for you to refer to!<br>
+    Do pay it forward to the fellow learners by liking their notes!<br>
+    If you would also like to share your <span id="pretty">aesthetic</span> notes, do contact us <a href="mailto:212033J@mymail.nyp.edu.sg">here!</a></p>
+    <p>Kindly email your PikiPoko user id, the materials you want to share, and the category where you want us to put it in!</p>
+
+    <button class="popdown">Primary school</button>
+    <div class="panel">
+      <!--tabs for the subject-->
+      <div class="prisch">
+        <button class="prischtab" onclick="openSubj('prienglish', this, '#f97b7b')" id="defaultOOpen"><a href="#prienglish">English</a></button>
+        <button class="prischtab" onclick="openSubj('primath', this, '#f97b7b')"><a href="#primath">Mathematics</a></button>
+        <button class="prischtab" onclick="openSubj('primothertongue', this, '#f97b7b')"><a href="#primothertongue">Mother Tongue</a></button>
+        <button class="prischtab" onclick="openSubj('priscience', this, '#f97b7b')"><a href="#priscience">Science</a></button>
+      </div>
+      <!--START OF ENG-->
+      <div id="prienglish" class="prischcontent">
+        <div class="scrollable-y">
+          <div class="slideshow-container">
+            <!--Library-->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 9</div>
+              <a href="https://www.nlb.gov.sg/" target="_blank">
+                <img src="inputs/images/resources/library.png">
+              </a>
+              <div class="text">NLB Library</div>
+            </div>
+            <!--Straits Times-->
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 9</div>
+              <a href="https://www.straitstimes.com/">
+                <img src="inputs/images/resources/straitstimes.png">
+              </a>
+              <div class="text">Straits Times</div>
+            </div>
+            <!--comprehension practice-->
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 9</div>
+              <a href="notes.html">
+                <img src="inputs/images/resources/comprehension.png">
+              </a>
+              <div class="text">Comprehension Practice</div>
+            </div>
+            <!--readers digest-->
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 9</div>
+              <a href="https://www.rd.com/">
+                <img src="inputs/images/resources/readersdigest.jpg">
+              </a>
+              <div class="text">Readers Digest</div>
+            </div>
+            <!--audible-->
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 9</div>
+              <a href="https://www.audible.com/ep/country-selector?ipRedirectOverride=true">
+                  <img src="inputs/images/resources/audible2.png">
+              </a>
+              <div class="text">Audible</div>
+            </div>
+            <!--lesson guide-->
+            <div class="mySlides fade">
+              <div class="numbertext">6 / 9</div>
+              <a href="https://www.youtube.com/channel/UCYgL81lc7DOLNhnel1_J6Vg">
+                <img src="https://www.championtutor.my/blog-malaysia/wp-content/uploads/2018/09/Class-Strength.png">
+              </a>
+              <div class="text">Lesson guide</div>
+            </div>
+            <!--formulas-->
+            <div class="mySlides fade">
+              <div class="numbertext">7 / 9</div>
+              <a href="https://www.theschoolrun.com/what-is-a-formula">
+                <img src="https://cdn5.vectorstock.com/i/1000x1000/13/09/math-formula-mathematics-calculus-on-school-vector-32641309.jpg">
+              </a>
+              <div class="text">Formulas</div>
+            </div>
+            <!--tuition center-->
+            <div class="mySlides fade">
+              <div class="numbertext">8 / 9</div>
+              <a href="https://www.mavistutorial.com/">
+                <img src="https://mcmscd.mercatus.com.sg/en/-/media/8DEF87BC14AA42EA85E61E02BB93AC2E.ashx?rev=d0d08b8b728241af87c085a0033e54c6&w=80&h=80">
+              </a>
+              <div class="text">Tuition center</div>
+            </div>
+            <!--exam papers-->
+            <div class="mySlides fade">
+              <div class="numbertext">9 / 9</div>
+                <a href="notes.html">
+                  <img src="inputs/images/resources/exampaper.png">
+                </a>
+                <div class="text">Exam Papers</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+
+          </div>
+          <h3>English</h3>
+          <p>Very important subject! English is the language where people across the world communicate with. It is your first language, so treat this subject seriously.</p>
+            <p>You have:</p>
+          <ul>
+            Paper 1
+            <li>Situational writing</li>
+            <li>Composition</li>
+            Paper 2
+            <li>Section A</li>
+            <li>Section B</li>
+          </ul>
+        </div>
+      </div>
+      <!--END OF ENG-->
+      <!--START OF MATH-->
+      <div id="primath" class="prischcontent">
+          <ul>
+            Paper 1
+            <li>Situational writing</li>
+            <li>Composition</li>
+            Paper 2
+            <li>Section A</li>
+            <li>Section B</li>
+          </ul>
+      </div>
+      <!--END OF MATH-->
+      <!--START OF MT-->
+      <div id="primothertongue" class="prischcontent">
+          <h3>Mother Tongue</h3>
+          <p>It is very important to learn your mother tongue language. It will serve as a reminder of your identity, and you will get to bring the people of the same race together!<br>You have:</p>
+          <ul>
+            Paper 1
+            <li>Situational writing</li>
+            <li>Composition</li>
+            Paper 2
+            <li>Section A</li>
+            <li>Section B</li>
+          </ul>
+        </div>
+      </div>
+      <!--END OF MT-->
+      <!--START OF SCIENCE-->
+      <div id="priscience" class="prischcontent">
+      </div>
+      <!--END OF SCIENCE-->
+      <!--script for inside panel-->
+      <script type="text/javascript">
+        function openSubj(pageName,elmnt,color) {
+          var i, prischcontent, prischtabs;
+          prischcontent = document.getElementsByClassName("prischcontent");
+          for (i = 0; i < prischcontent.length; i++){
+            prischcontent[i].style.display = "none";
+          }
+          prischtabs = document.getElementsByClassName("prischtab");
+          for (i = 0; i < prischtabs.length; i++){
+            prischtabs[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+        //get the element with id defaultOOpen and click on it
+        document.getElementById("defaultOOpen").click();
+
+        //carousel
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {
+            slideIndex = 1
+          }
+          if (n < 1) {
+            slideIndex = slides.length
+          }
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+      </script>
+    </div>
+
+    <button class="popdown">Secondary school</button>
+
+
+    <button class="popdown">tertiary Education</button>
+
+  </div>
+
+  <div id="exercisepractice" class="content">
+    <h3>"Practice makes perfect"</h3>
+    <p>If you know how to do the questions, good! Continue to practice more.<br>
+    If you get the question wrong, don't be afraid to try again! Learn from your mistakes and work harder next time!<br>
+    Do share with the PikiPoko leaners your questions. Make learning environment more welcoming for everyone</p>
+    <button class="popdown">Primary school</button>
+    <div class="panel">
+      <h3>English</h3>
+      <h3>Math</h3>
+      <h3>Mother Tongue</h3>
+      <h3>Science</h3>
+    </div>
+    <button class="popdown">Secondary school</button>
+    <div class="panel">
+      <div class="secschool">
+        <div class="panel">
+          <div class="olevel">
+            <h3>O level Syllabus</h3>
+          </div>
+          <div class="nlevel">
+            <h3>N Level Syllabus</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="popdown">tertiary Education</button>
+    <div class="panel">
+      <div class="tertiary">
+        <div class="alevel">
+          <h3>A level Syllabus</h3>
+        </div>
+        <div class="polytechnic">
+          <h3>Polytechnic</h3>
+        </div>
+        <div class="university">
+          <h3>University</h3>
+        </div>
+      </div>
+    </div>
+    <script>
+    var acc = document.getElementsByClassName("popdown");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+    function openPage(pageName,elmnt,color) {
+    var i, content, tablinks;
+    content = document.getElementsByClassName("content");
+    for (i = 0; i < content.length; i++) {
+      content[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+     for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].style.backgroundColor = "";
+     }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+  </div>
+
+  <hr style="height:5px; background-color:#f97b7b; width:80%; text-align:center; margin-top: 80px;">
+
+
+    <div id="stickynotes">
+    <p>
+      <a href="#top"><img src="https://www.pngfind.com/pngs/m/383-3837846_up-arrow-icon-top-move-to-top-button.png"/></a></li>
+    </p>
+  </section>
+  </body>
+  </html>
