@@ -536,12 +536,8 @@ body {
 }
 
 /*FOOTER*/
-footer{
-  width: 80%;
-  margin: auto;
-}
 .footer .container{
-	max-width: 1170px;
+	max-width: 80%;
 	margin:auto;
 }
 .footer .row{
@@ -553,6 +549,7 @@ footer{
 }
 .footer{
     padding: 70px 0;
+    margin: auto;
 }
 .footer-col{
    width: 20%;

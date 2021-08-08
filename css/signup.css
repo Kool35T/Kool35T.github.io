@@ -185,8 +185,9 @@ hr{
 .forms{
   height: 700px;
   max-width: 70%;
-  min-width: 400px;
+  min-width: 40%;
   margin: auto;
+  padding: 20px;
   background-image: linear-gradient(rgba(241, 177, 177, 1), rgba(235, 241, 177, 1));
   border: solid 1px black;
 }
@@ -270,56 +271,6 @@ hr{
 }
 /*END*/
 
-/*hoverable thing for responsive tag*/
-.navbutton{
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-.dropdownbtn{
-  position: relative;
-  display: inline-block;
-  visibility: hidden;
-  top: 20px;
-  right: 20px;
-}
-.dropdown-content{
-  display: none;
-  position: absolute;
-  background-color: rgba(181, 252, 210, 1);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown-content a{
-  color: black;
-  padding: 10px 13px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-.dropdownbtn:hover .dropdown-content{
-  display: block;
-}
-.dropdownbtn:hover .navbutton{
-  background-color: #3e8e41;
-}
-/*responsive*/
-@media only screen and (max-width: 767px) {
-  /* For tablets or phone */
-  .dropdownbtn{
-    width: 8%;
-    visibility: visible;
-  }
-  #mySidenav{
-    display: none;
-  }
-}
 
 #label{
   font-weight: 600;
